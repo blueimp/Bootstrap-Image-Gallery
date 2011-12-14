@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<!--
+/*
+ * Bootstrap Image Gallery 1.0
+ * https://github.com/blueimp/Bootstrap-Image-Gallery
+ *
+ * Copyright 2011, Sebastian Tschan
+ * https://blueimp.net
+ *
+ * Licensed under the MIT license:
+ * http://creativecommons.org/licenses/MIT/
+ */
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bootstrap Image Gallery</title>
+<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
+<link rel="stylesheet" href="bootstrap-image-gallery.min.css">
+<style type="text/css">
+html, body {
+    height: 100%;
+    background: #222;
+    color: #fff;
+}
+.page-header {
+    padding: 80px 20px 10px;
+    margin: 0 -20px 20px;
+    border-bottom: 0;
+    -webkit-box-shadow: none;
+       -moz-box-shadow: none;
+            box-shadow: none;
+}
+.page-header h1 {
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', Arial, sans-serif;
+    color: #fff;
+}
+.page-header a {
+    color: orange;
+}
+#gallery {
+    margin-bottom: 20px;
+}
+</style>
+<!--[if lt IE 7]>
+<style type="text/css">
+.topbar {
+    position: absolute;
+}
+.topbar ul, .topbar .container-fluid {
+    padding-top: 10px;
+    margin-left: 20px;
+}
+.topbar li {
+    display: inline;
+    margin-right: 10px;
+}
+.topbar a:hover {
+    color: #fff;
+}
+/* The following is required for Modals to work on IE6 */
+.modal {
+    position: absolute;
+    top: 50%;
+    filter: none;
+}
+#gallery-modal.fullscreen {
+    overflow: hidden;
+}
+</style>
+<![endif]-->
+<meta name="description" content="Bootstrap Image Gallery is an extension to the Modal dialog of Twitter's Bootstrap toolkit, to ease navigation between a set of gallery images. It features mouse and keyboard navigation, transition effects, fullscreen mode and slideshow functionality.">
+</head>
+<body>
+<div class="topbar">
+    <div class="fill">
+        <div class="container-fluid">
+            <a class="brand" href="https://github.com/blueimp/Bootstrap-Image-Gallery">Bootstrap Image Gallery</a>
+            <ul class="nav">
+                <li class="active"><a href="#">Demo</a></li>
+                <li><a href="https://github.com/blueimp/Bootstrap-Image-Gallery/downloads">Downloads</a></li>
+                <li><a href="https://github.com/blueimp/Bootstrap-Image-Gallery">Source Code</a></li>
+                <li><a href="https://github.com/blueimp/Bootstrap-Image-Gallery">Documentation</a></li>
+                <li><a href="https://github.com/blueimp/Bootstrap-Image-Gallery/issues">Issues</a></li>
+                <li><a href="https://blueimp.net">&copy; Sebastian Tschan</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="page-header">
+        <h1>Bootstrap Image Gallery Demo</h1>
+        <p>Bootstrap Image Gallery is an extension to the <a href="http://twitter.github.com/bootstrap/javascript.html#modal">Modal</a> dialog of Twitter's <a href="http://twitter.github.com/bootstrap/">Bootstrap</a> toolkit, to ease navigation between a set of gallery images.<br>
+            It features mouse and keyboard navigation, transition effects, fullscreen mode and slideshow functionality.</p>
+        <p>
+            <button id="toggle-slideshow" class="btn large success" data-toggle="toggle">Slideshow</button>
+            <button id="toggle-fullscreen" class="btn large primary" data-toggle="toggle">Fullscreen</button>
+        </p>
+    </div>
+    <div id="gallery"></div>
+    <!-- gallery-loader is the loading animation container -->
+    <div id="gallery-loader"></div>
+    <!-- gallery-modal is the modal dialog used for the image gallery -->
+    <div id="gallery-modal" class="modal hide fade">
+        <div class="modal-header">
+            <a href="#" class="close">&times;</a>
+            <h3 class="title"></h3>
+        </div>
+        <div class="modal-body"></div>
+        <div class="modal-footer">
+            <a class="btn primary next">Next</a>
+            <a class="btn info prev">Previous</a>
+            <a class="btn success download" target="_blank">Download</a>
+        </div>
+    </div>
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="vendor/jquery.ui.widget.min.js"></script>
+<script src="http://twitter.github.com/bootstrap/1.4.0/bootstrap-modal.min.js"></script>
+<script src="http://blueimp.github.com/JavaScript-Load-Image/load-image.min.js"></script>
+<script src="bootstrap-image-gallery.min.js"></script>
+<!-- The Bootstrap Button plugin is not required, but included for the demo buttons -->
+<script src="http://twitter.github.com/bootstrap/1.4.0/bootstrap-buttons.min.js"></script>
+<script>
+/*jslint unparam: true */
+/*global window, document, $ */
+$(function () {
+    'use strict';
+
+    // Initialize the Image Gallery widget:
+    $('#gallery').imagegallery();
+
+    // Toggle slideshow mode:
+    $('#toggle-slideshow').button().click(function () {
+        $('#gallery').imagegallery(
+            'option',
+            'slideshow',
+            !$(this).hasClass('active') && 5000
+        );
+        if (!$(this).hasClass('active')) {
+            // Use a timeout to avoid the button click event
+            // bubbling up aborting the image loading:
+            window.setTimeout(function () {
+                $('#gallery').children().first().click();
+            }, 1);
+        }
+    });
+
+    // Toggle fullscreen mode:
+    $('#toggle-fullscreen').button().click(function () {
+        var button = $(this),
+            root = document.documentElement;
+        if (!button.hasClass('active')) {
+            $('#gallery-modal').addClass('fullscreen');
+            if (root.webkitRequestFullScreen) {
+                root.webkitRequestFullScreen(
+                    window.Element.ALLOW_KEYBOARD_INPUT
+                );
+            } else if (root.mozRequestFullScreen) {
+                root.mozRequestFullScreen();
+            }
+        } else {
+            $('#gallery-modal').removeClass('fullscreen');
+            (document.webkitCancelFullScreen ||
+                document.mozCancelFullScreen ||
+                $.noop).apply(document);
+        }
+    });
+
+    // Load images via flickr for demonstration purposes:
+    $.ajax({
+        url: 'http://api.flickr.com/services/rest/',
+        data: {
+            format: 'json',
+            method: 'flickr.interestingness.getList',
+            api_key: '7617adae70159d09ba78cfec73c13be3'
+        },
+	    dataType: 'jsonp',
+        jsonp: 'jsoncallback'
+    }).done(function (data) {
+        var gallery = $('#gallery'),
+            url;
+        $.each(data.photos.photo, function (index, photo) {
+            url = 'http://farm' + photo.farm + '.static.flickr.com/' +
+                photo.server + '/' + photo.id + '_' + photo.secret;
+            $('<a rel="gallery"></a>')
+                .append($('<img>').prop('src', url + '_s.jpg'))
+                .prop('href', url + '_b.jpg')
+                .prop('title', photo.title)
+                .appendTo(gallery);
+        });
+    });
+});
+</script>
+</body> 
+</html>
