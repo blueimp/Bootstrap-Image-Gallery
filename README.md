@@ -132,4 +132,4 @@ $('#gallery').imagegallery('destroy');
 * [JavaScript Load Image](http://blueimp.github.com/JavaScript-Load-Image) v. 1.1.3+
 
 ## License
-Released under the [MIT license](http://creativecommons.org/licenses/MIT/).
+Released under the [MIT license](http://www.opensource.org/licenses/MIT).
