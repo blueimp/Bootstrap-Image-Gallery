@@ -1,5 +1,5 @@
 /*
- * Bootstrap Image Gallery 1.0
+ * Bootstrap Image Gallery 1.0.1
  * https://github.com/blueimp/Bootstrap-Image-Gallery
  *
  * Copyright 2011, Sebastian Tschan
@@ -19,8 +19,8 @@
     // It features transition effects, fullscreen mode and slideshow functionality.
     $.widget('blueimp.imagegallery', {
         options: {
-            // Event handler namespace:
-            namespace: 'imagegallery',
+            // Event handler namespace (defaults to the widget name):
+            namespace: undefined,
             // Selector for the gallery images:
             selector: 'a[rel=gallery]',
             // Selector for the modal dialog:
@@ -353,24 +353,25 @@
             );
         },
         _initTransitionSupport: function () {
-            var gallery = this;
-            // Load after DOM is ready, to wait for the Modal plugin:
-            $(function () {
-                gallery._transition = $.support.transition &&
-                    gallery._modal.hasClass('fade');
-                if ($.support.transition) {
-                    gallery._transitionEnd = 'TransitionEnd';
-                    if ($.browser.webkit) {
-                        gallery._transitionEnd = 'webkitTransitionEnd';
-                    } else if ($.browser.mozilla) {
-                        gallery._transitionEnd = 'transitionend';
-                    } else if ($.browser.opera) {
-                        gallery._transitionEnd = 'oTransitionEnd';
-                    }
-                }
-            });
+            var that = this,
+                style = (document.body || document.documentElement).style,
+                suffix = '.' + that.options.namespace;
+            that._transition = style.transition !== undefined ||
+                style.WebkitTransition !== undefined ||
+                style.MozTransition !== undefined ||
+                style.MsTransition !== undefined ||
+                style.OTransition !== undefined;
+            if (that._transition) {
+                that._transitionEnd = [
+                    'TransitionEnd',
+                    'webkitTransitionEnd',
+                    'transitionend',
+                    'oTransitionEnd'
+                ].join(suffix + ' ') + suffix;
+            }
         },
         _create: function () {
+            this.options.namespace = this.options.namespace || this.widgetName;
             this._modal = $(this.options.modalSelector).modal({
                 backdrop: this.options.backdrop,
                 keyboard: this.options.keyboard
