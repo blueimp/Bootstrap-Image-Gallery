@@ -1,5 +1,5 @@
 /*
- * Bootstrap Image Gallery 1.0.1
+ * Bootstrap Image Gallery 1.0.2
  * https://github.com/blueimp/Bootstrap-Image-Gallery
  *
  * Copyright 2011, Sebastian Tschan
@@ -65,7 +65,8 @@
                 gallery._currentLink = this;
                 gallery._initAbortHandlers();
             }
-            if (gallery._isModalLink && gallery._transition) {
+            if (gallery._isModalLink && gallery._transition &&
+                    gallery._modal.hasClass('fade')) {
                 gallery._modal.bind(
                     gallery._transitionEnd + '.' + options.namespace,
                     function (e) {
