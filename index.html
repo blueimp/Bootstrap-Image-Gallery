@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <!--
 /*
- * Bootstrap Image Gallery 1.0
+ * Bootstrap Image Gallery 1.0.1
  * https://github.com/blueimp/Bootstrap-Image-Gallery
  *
  * Copyright 2011, Sebastian Tschan
@@ -17,58 +17,27 @@
 <title>Bootstrap Image Gallery</title>
 <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
 <link rel="stylesheet" href="bootstrap-image-gallery.min.css">
+<!--[if lt IE 7]><link rel="stylesheet" href="bootstrap-ie6.min.css"><![endif]-->
 <style type="text/css">
 html, body {
     height: 100%;
     background: #222;
     color: #fff;
 }
-.page-header {
-    padding: 80px 20px 10px;
-    margin: 0 -20px 20px;
-    border-bottom: 0;
-    -webkit-box-shadow: none;
-       -moz-box-shadow: none;
-            box-shadow: none;
+body {
+    padding-top: 60px;
 }
-.page-header h1 {
+.header {
+    margin-bottom: 30px;
+}
+.header h1 {
     font-family: 'Lucida Grande', 'Lucida Sans Unicode', Arial, sans-serif;
     color: #fff;
 }
-.page-header a {
+.header a {
     color: orange;
 }
-#gallery {
-    margin-bottom: 20px;
-}
 </style>
-<!--[if lt IE 7]>
-<style type="text/css">
-.topbar {
-    position: absolute;
-}
-.topbar ul, .topbar .container-fluid {
-    padding-top: 10px;
-    margin-left: 20px;
-}
-.topbar li {
-    display: inline;
-    margin-right: 10px;
-}
-.topbar a:hover {
-    color: #fff;
-}
-/* The following is required for Modals to work on IE6 */
-.modal {
-    position: absolute;
-    top: 50%;
-    filter: none;
-}
-#gallery-modal.fullscreen {
-    overflow: hidden;
-}
-</style>
-<![endif]-->
 <meta name="description" content="Bootstrap Image Gallery is an extension to the Modal dialog of Twitter's Bootstrap toolkit, to ease navigation between a set of gallery images. It features mouse and keyboard navigation, transition effects, fullscreen mode and slideshow functionality.">
 </head>
 <body>
@@ -88,16 +57,19 @@ html, body {
     </div>
 </div>
 <div class="container-fluid">
-    <div class="page-header">
+    <div class="header">
         <h1>Bootstrap Image Gallery Demo</h1>
-        <p>Bootstrap Image Gallery is an extension to the <a href="http://twitter.github.com/bootstrap/javascript.html#modal">Modal</a> dialog of Twitter's <a href="http://twitter.github.com/bootstrap/">Bootstrap</a> toolkit, to ease navigation between a set of gallery images.<br>
+        <blockquote>
+            <p>Bootstrap Image Gallery is an extension to the <a href="http://twitter.github.com/bootstrap/javascript.html#modal">Modal</a> dialog of Twitter's <a href="http://twitter.github.com/bootstrap/">Bootstrap</a> toolkit, to ease navigation between a set of gallery images.<br>
             It features mouse and keyboard navigation, transition effects, fullscreen mode and slideshow functionality.</p>
+        </blockquote>
         <p>
             <button id="toggle-slideshow" class="btn large success" data-toggle="toggle">Slideshow</button>
             <button id="toggle-fullscreen" class="btn large primary" data-toggle="toggle">Fullscreen</button>
         </p>
     </div>
     <div id="gallery"></div>
+    <br>
     <!-- gallery-loader is the loading animation container -->
     <div id="gallery-loader"></div>
     <!-- gallery-modal is the modal dialog used for the image gallery -->
