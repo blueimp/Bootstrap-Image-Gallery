@@ -1,5 +1,5 @@
 /*
- * Bootstrap Image Gallery 1.0.2
+ * Bootstrap Image Gallery 1.0.3
  * https://github.com/blueimp/Bootstrap-Image-Gallery
  *
  * Copyright 2011, Sebastian Tschan
@@ -364,7 +364,7 @@
                 style.OTransition !== undefined;
             if (that._transition) {
                 that._transitionEnd = [
-                    'TransitionEnd',
+                    'MSTransitionEnd',
                     'webkitTransitionEnd',
                     'transitionend',
                     'oTransitionEnd'
