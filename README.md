@@ -88,11 +88,9 @@ To deinitialize the Modal Gallery event listener, the following code snippet can
 ```js
 $(document.body).off('.modal-gallery.data-api')
 ```
-
-Please also have a look at the [Bootstrap JS Guidelines](https://github.com/twitter/bootstrap/blob/master/js/README.md).
+Please also have a look at the [Bootstrap JS Guidelines](https://github.com/twitter/bootstrap/blob/master/js).
 
 ## Requirements
-
 * [jQuery](http://jquery.com/) v. 1.7+
 * [Bootstrap Modal](http://twitter.github.com/bootstrap/javascript.html#modal) v. 2.0+
 * [JavaScript Load Image](http://blueimp.github.com/JavaScript-Load-Image) v. 1.1.4+
