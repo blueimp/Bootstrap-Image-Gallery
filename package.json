@@ -1,6 +1,6 @@
 {
     "name": "blueimp-bootstrap-image-gallery",
-    "version": "1.0.3",
+    "version": "2.0.0",
     "title": "Bootstrap Image Gallery",
     "description": "Bootstrap Image Gallery is an extension to the Modal dialog of Twitter's Bootstrap toolkit, to ease navigation between a set of gallery images. It features mouse and keyboard navigation, transition effects, fullscreen mode and slideshow functionality.",
     "keywords": [
@@ -40,10 +40,9 @@
         }
     ],
     "dependencies": {
-        "jquery": ">=1.6",
-        "jquery.ui.widget": ">=1.8",
-        "blueimp-load-image": ">=1.1.3",
-        "bootstrap-modal": ">=1.4"
+        "jquery": ">=1.7",
+        "blueimp-load-image": ">=1.1.4",
+        "bootstrap-modal": ">=2.0"
     },
     "files": [
         "bootstrap-image-gallery.js",
