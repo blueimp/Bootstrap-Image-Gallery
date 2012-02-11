@@ -15,7 +15,7 @@ Add the following HTML snippet to the head section of your webpage:
 ```html
 <link rel="stylesheet" href="http://blueimp.github.com/cdn/css/bootstrap.min.css">
 <!--[if lt IE 7]><link rel="stylesheet" href="http://blueimp.github.com/cdn/css/bootstrap-ie6.min.css"><![endif]-->
-<link rel="stylesheet" href="bootstrap-image-gallery.min.css">
+<link rel="stylesheet" href="css/bootstrap-image-gallery.min.css">
 ```
 
 Add the following HTML snippet to the body of your webpage:
@@ -43,7 +43,7 @@ Include the following scripts:
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="http://blueimp.github.com/cdn/js/bootstrap.min.js"></script>
 <script src="http://blueimp.github.com/JavaScript-Load-Image/load-image.min.js"></script>
-<script src="bootstrap-image-gallery.min.js"></script>
+<script src="js/bootstrap-image-gallery.min.js"></script>
 ```
 
 ### Initialization

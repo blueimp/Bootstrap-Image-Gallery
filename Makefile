@@ -3,7 +3,7 @@
 default: css js
 
 css:
-	lessc --compress bootstrap-image-gallery.css > bootstrap-image-gallery.min.css
+	lessc --compress css/bootstrap-image-gallery.css > css/bootstrap-image-gallery.min.css
 
 js:
-	uglifyjs -nc bootstrap-image-gallery.js > bootstrap-image-gallery.min.js
+	uglifyjs -nc js/bootstrap-image-gallery.js > js/bootstrap-image-gallery.min.js

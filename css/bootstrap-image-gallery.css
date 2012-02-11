@@ -1,6 +1,6 @@
 @charset 'UTF-8';
 /*
- * Bootstrap Image Gallery CSS 2.0
+ * Bootstrap Image Gallery CSS 2.1
  * https://github.com/blueimp/Bootstrap-Image-Gallery
  *
  * Copyright 2011, Sebastian Tschan
@@ -23,7 +23,7 @@
   cursor: pointer;
 }
 .modal-loading .modal-image {
-  background: url(loading.gif) center no-repeat;
+  background: url(../img/loading.gif) center no-repeat;
 }
 .modal-gallery.fade .modal-image {
   -webkit-transition: width 0.15s ease, height 0.15s ease;
