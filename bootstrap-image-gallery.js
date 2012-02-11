@@ -1,5 +1,5 @@
 /*
- * Bootstrap Image Gallery 2.0.1
+ * Bootstrap Image Gallery 2.1
  * https://github.com/blueimp/Bootstrap-Image-Gallery
  *
  * Copyright 2011, Sebastian Tschan
@@ -48,7 +48,7 @@
                     'a[data-target=' + options.target + ']',
                 index = 0;
             $(options.delegate).find(selector).each(function (i, node) {
-                var url = node.href;
+                var url = node.href || $(node).data('href');
                 // Check the the previously added url, to account for
                 // thumbnail and name linking twice to the same image:
                 if ($this.urls[$this.urls.length - 1] !== url) {
@@ -311,7 +311,7 @@
                 link = $(e.target).closest(options.selector);
                 if (link.length && modal.length) {
                     e.preventDefault();
-                    options.href = link.prop('href');
+                    options.href = link.prop('href') || link.data('href');
                     options.delegate = link[0] !== this ? this : document;
                     if (data) {
                         $.extend(data.options, options);

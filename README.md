@@ -59,6 +59,16 @@ Initialize the Image Gallery widget by adding the following **data-attributes** 
 
 No additional JavaScript snippets are required. Note that you can also add links to the container element at a later stage.
 
+It is also possible to use different elements than links for the gallery functionality, by storing the url to the images as **data-href** attribute and setting **data-selector** on the gallery container:
+
+```html
+<div id="gallery" data-toggle="modal-gallery" data-target="#modal-gallery" data-selector="div.gallery-item">
+    <div class="gallery-item" data-href="banana.jpg" title="Banana">Banana</div>
+    <div class="gallery-item" data-href="apple.jpg" title="Apple">Apple</div>
+    <div class="gallery-item" data-href="orange.jpg" title="Orange">Orange</div>
+</div>
+```
+
 ## API
 
 ### Options
