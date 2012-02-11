@@ -1,5 +1,5 @@
 /*
- * Bootstrap Image Gallery 2.0
+ * Bootstrap Image Gallery 2.0.1
  * https://github.com/blueimp/Bootstrap-Image-Gallery
  *
  * Copyright 2011, Sebastian Tschan
@@ -45,7 +45,8 @@
             var $this = this,
                 options = this.options,
                 selector = options.selector ||
-                    'a[data-target=' + options.target + ']';
+                    'a[data-target=' + options.target + ']',
+                index = 0;
             $(options.delegate).find(selector).each(function (i, node) {
                 var url = node.href;
                 // Check the the previously added url, to account for
@@ -54,8 +55,9 @@
                     $this.urls.push(url);
                     $this.titles.push(node.title);
                     if (url === options.href) {
-                        options.index = i;
+                        options.index = index;
                     }
+                    index += 1;
                 }
             });
             if (!this.urls[options.index]) {
