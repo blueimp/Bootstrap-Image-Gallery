@@ -1,5 +1,5 @@
 /*
- * Bootstrap Image Gallery 2.1
+ * Bootstrap Image Gallery 2.2
  * https://github.com/blueimp/Bootstrap-Image-Gallery
  *
  * Copyright 2011, Sebastian Tschan
@@ -10,9 +10,25 @@
  */
 
 /*jslint nomen: true, regexp: true */
-/*global window, document, jQuery */
+/*global define, window, document, jQuery */
 
-(function ($) {
+(function (factory) {
+    'use strict';
+    if (typeof define === 'function' && define.amd) {
+        // Register as an anonymous AMD module:
+        define([
+            'jquery',
+            './load-image.js',
+            'bootstrap'
+        ], factory);
+    } else {
+        // Browser globals:
+        factory(
+            window.jQuery,
+            window.loadImage
+        );
+    }
+}(function ($, loadImage) {
     'use strict';
     // Bootstrap Image Gallery is an extension to the Modal dialog of Twitter's
     // Bootstrap toolkit, to ease navigation between a set of gallery images.
@@ -120,7 +136,7 @@
             }, 3000);
             modal.find('.modal-title').text(this.titles[index]);
             modal.find('.modal-download').prop('href', this.urls[index]);
-            this.loadingImage = window.loadImage(
+            this.loadingImage = loadImage(
                 this.urls[index],
                 function (img) {
                     window.clearTimeout($this._loadingTimeout);
@@ -321,4 +337,4 @@
             }
         );
     });
-}(window.jQuery));
+}));
