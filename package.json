@@ -43,10 +43,5 @@
         "jquery": ">=1.7",
         "blueimp-load-image": ">=1.1.4",
         "bootstrap-modal": ">=2.0"
-    },
-    "files": [
-        "js/bootstrap-image-gallery.js",
-        "css/bootstrap-image-gallery.css",
-        "img/loading.gif"
-    ]
+    }
 }
