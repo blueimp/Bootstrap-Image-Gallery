@@ -1,5 +1,5 @@
 /*
- * Bootstrap Image Gallery 2.2
+ * Bootstrap Image Gallery 2.2.1
  * https://github.com/blueimp/Bootstrap-Image-Gallery
  *
  * Copyright 2011, Sebastian Tschan
@@ -159,15 +159,17 @@
                 width: img.width,
                 height: img.height
             });
-            if (transition) {
-                clone = modal.clone().hide().appendTo(document.body);
-            }
-            method.call(modal.stop(), {
-                'margin-top': -((clone || modal).outerHeight() / 2),
-                'margin-left': -((clone || modal).outerWidth() / 2)
-            });
-            if (clone) {
-                clone.remove();
+            if ($(window).width() > 480) {
+                if (transition) {
+                    clone = modal.clone().hide().appendTo(document.body);
+                }
+                method.call(modal.stop(), {
+                    'margin-top': -((clone || modal).outerHeight() / 2),
+                    'margin-left': -((clone || modal).outerWidth() / 2)
+                });
+                if (clone) {
+                    clone.remove();
+                }
             }
             modalImage.append(img);
             forceReflow = img.offsetWidth;
@@ -287,10 +289,12 @@
                         canvas: options.canvas
                     };
                 }
-                modal.css({
-                    'margin-top': -(modal.outerHeight() / 2),
-                    'margin-left': -(modal.outerWidth() / 2)
-                });
+                if (windowWidth > 480) {
+                    modal.css({
+                        'margin-top': -(modal.outerHeight() / 2),
+                        'margin-left': -(modal.outerWidth() / 2)
+                    });
+                }
                 this.initGalleryEvents();
                 this.initLinks();
                 if (this.urls.length) {
