@@ -1,6 +1,6 @@
 @charset 'UTF-8';
 /*
- * Bootstrap Image Gallery CSS 2.1
+ * Bootstrap Image Gallery CSS 2.3
  * https://github.com/blueimp/Bootstrap-Image-Gallery
  *
  * Copyright 2011, Sebastian Tschan
@@ -92,4 +92,10 @@
 .modal-fullscreen .modal-header:hover,
 .modal-fullscreen .modal-footer:hover {
   opacity: 1;
+}
+
+@media (max-width: 480px) {
+  .modal-gallery .btn span {
+    display: none;
+  }
 }

@@ -13,3 +13,4 @@
 .modal-fullscreen .modal-footer{top:auto;bottom:0;}
 .modal-fullscreen .close,.modal-fullscreen .modal-title{color:#fff;text-shadow:0 0 2px rgba(33, 33, 33, 0.8);}
 .modal-fullscreen .modal-header:hover,.modal-fullscreen .modal-footer:hover{opacity:1;}
+@media (max-width:480px){.modal-gallery .btn span{display:none;}}
