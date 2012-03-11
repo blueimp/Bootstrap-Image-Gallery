@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <!--
 /*
- * Bootstrap Image Gallery 2.3
+ * Bootstrap Image Gallery 2.3.1
  * https://github.com/blueimp/Bootstrap-Image-Gallery
  *
  * Copyright 2011, Sebastian Tschan
@@ -125,7 +125,7 @@ $(function () {
         } else {
             options = $.extend(modal.data(), options);
         }
-        modal.find('.modal-slideshow').children()
+        modal.find('.modal-slideshow').find('i')
             .removeClass('icon-play')
             .addClass('icon-pause');
         modal.modal(options);
