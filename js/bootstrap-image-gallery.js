@@ -1,5 +1,5 @@
 /*
- * Bootstrap Image Gallery 2.2.1
+ * Bootstrap Image Gallery 2.2.2
  * https://github.com/blueimp/Bootstrap-Image-Gallery
  *
  * Copyright 2011, Sebastian Tschan
@@ -103,7 +103,7 @@
                 this.options.slideshow = node.data('slideshow') || 5000;
                 this.startSlideShow();
             }
-            node.children().toggleClass('icon-play icon-pause');
+            node.find('i').toggleClass('icon-play icon-pause');
         },
         preloadImages: function () {
             var options = this.options,
