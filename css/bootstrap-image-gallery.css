@@ -1,6 +1,6 @@
 @charset 'UTF-8';
 /*
- * Bootstrap Image Gallery CSS 2.3
+ * Bootstrap Image Gallery CSS 2.4
  * https://github.com/blueimp/Bootstrap-Image-Gallery
  *
  * Copyright 2011, Sebastian Tschan
@@ -13,6 +13,12 @@
 .modal-gallery {
   width: auto;
   max-height: none;
+}
+.modal-gallery .modal-body {
+  max-height: none;
+}
+.modal-gallery .modal-title {
+  display: inline-block;
 }
 .modal-gallery .modal-image {
   position: relative;

@@ -1,5 +1,7 @@
 @charset 'UTF-8';
 .modal-gallery{width:auto;max-height:none;}
+.modal-gallery .modal-body{max-height:none;}
+.modal-gallery .modal-title{display:inline-block;}
 .modal-gallery .modal-image{position:relative;margin:auto;min-width:128px;min-height:128px;overflow:hidden;cursor:pointer;}
 .modal-loading .modal-image{background:url(../img/loading.gif) center no-repeat;}
 .modal-gallery.fade .modal-image{-webkit-transition:width 0.15s ease, height 0.15s ease;-moz-transition:width 0.15s ease, height 0.15s ease;-ms-transition:width 0.15s ease, height 0.15s ease;-o-transition:width 0.15s ease, height 0.15s ease;transition:width 0.15s ease, height 0.15s ease;}

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <!--
 /*
- * Bootstrap Image Gallery 2.3.1
+ * Bootstrap Image Gallery 2.4
  * https://github.com/blueimp/Bootstrap-Image-Gallery
  *
  * Copyright 2011, Sebastian Tschan
@@ -34,6 +34,9 @@ header h1 {
 }
 header a {
     color: orange;
+}
+.modal {
+    color: #333;
 }
 </style>
 <link rel="stylesheet" href="http://blueimp.github.com/cdn/css/bootstrap-responsive.min.css">
@@ -87,21 +90,21 @@ header a {
     </div>
     <div class="modal-body"><div class="modal-image"></div></div>
     <div class="modal-footer">
-        <a class="btn btn-primary modal-next">
-            <span>Next</span>
-            <i class="icon-arrow-right icon-white"></i>
-        </a>
-        <a class="btn btn-info modal-prev">
-            <i class="icon-arrow-left icon-white"></i>
-            <span>Previous</span>
+        <a class="btn modal-download" target="_blank">
+            <i class="icon-download"></i>
+            <span>Download</span>
         </a>
         <a class="btn btn-success modal-play modal-slideshow" data-slideshow="5000">
             <i class="icon-play icon-white"></i>
             <span>Slideshow</span>
         </a>
-        <a class="btn modal-download" target="_blank">
-            <i class="icon-download"></i>
-            <span>Download</span>
+        <a class="btn btn-info modal-prev">
+            <i class="icon-arrow-left icon-white"></i>
+            <span>Previous</span>
+        </a>
+        <a class="btn btn-primary modal-next">
+            <span>Next</span>
+            <i class="icon-arrow-right icon-white"></i>
         </a>
     </div>
 </div>
