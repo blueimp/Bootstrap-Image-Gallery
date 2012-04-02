@@ -40,7 +40,7 @@ Add the following HTML snippet to the body of your webpage:
 Include the following scripts:
 
 ```html
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="http://blueimp.github.com/cdn/js/bootstrap.min.js"></script>
 <script src="http://blueimp.github.com/JavaScript-Load-Image/load-image.min.js"></script>
 <script src="js/bootstrap-image-gallery.min.js"></script>
