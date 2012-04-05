@@ -1,5 +1,5 @@
 /*
- * Bootstrap Image Gallery 2.2.3
+ * Bootstrap Image Gallery 2.3
  * https://github.com/blueimp/Bootstrap-Image-Gallery
  *
  * Copyright 2011, Sebastian Tschan
@@ -231,10 +231,14 @@
             var $this = this,
                 modal = this.$element;
             modal.find('.modal-image').on('click.modal-gallery', function (e) {
-                if (e.altKey) {
-                    $this.prev(e);
+                if ($this.urls.length === 1) {
+                    $this.hide();
                 } else {
-                    $this.next(e);
+                    if (e.altKey) {
+                        $this.prev(e);
+                    } else {
+                        $this.next(e);
+                    }
                 }
             });
             modal.find('.modal-prev').on('click.modal-gallery', function (e) {
@@ -299,6 +303,8 @@
                 this.initGalleryEvents();
                 this.initLinks();
                 if (this.urls.length) {
+                    modal.find('.modal-slideshow, .modal-prev, .modal-next')
+                        .toggle(this.urls.length !== 1);
                     this.loadImage();
                 }
             }
