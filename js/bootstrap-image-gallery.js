@@ -1,5 +1,5 @@
 /*
- * Bootstrap Image Gallery 2.3
+ * Bootstrap Image Gallery 2.4
  * https://github.com/blueimp/Bootstrap-Image-Gallery
  *
  * Copyright 2011, Sebastian Tschan
@@ -52,7 +52,9 @@
         // Set to true to display images as canvas elements:
         canvas: false,
         // Shows the next image after the given time in ms (0 = disabled):
-        slideshow: 0
+        slideshow: 0,
+        // Defines the image division for previous/next clicks:
+        imageClickDivision: 0.5
     });
     var originalShow = $.fn.modal.Constructor.prototype.show,
         originalHide = $.fn.modal.Constructor.prototype.hide;
@@ -231,10 +233,12 @@
             var $this = this,
                 modal = this.$element;
             modal.find('.modal-image').on('click.modal-gallery', function (e) {
+                var modalImage = $(this);
                 if ($this.urls.length === 1) {
                     $this.hide();
                 } else {
-                    if (e.altKey) {
+                    if ((e.pageX - modalImage.offset().left) / modalImage.width() <
+                            $this.options.imageClickDivision) {
                         $this.prev(e);
                     } else {
                         $this.next(e);
@@ -305,6 +309,10 @@
                 if (this.urls.length) {
                     modal.find('.modal-slideshow, .modal-prev, .modal-next')
                         .toggle(this.urls.length !== 1);
+                    modal.toggleClass(
+                        'modal-single',
+                        this.urls.length === 1
+                    );
                     this.loadImage();
                 }
             }
