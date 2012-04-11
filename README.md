@@ -83,6 +83,14 @@ The Image Gallery follows the guideline of the Bootstrap JavaScript collection. 
 
 More Options are documented at the start of the Image Gallery source file.
 
+### Events
+In addition to the modal events provided by [Bootstrap Modal](http://twitter.github.com/bootstrap/javascript.html#modals), the Image Gallery provides two additional events:
+
+* **beforeLoad**:  
+Triggered when the next (or previous) image in the gallery is about to be loaded.
+* **load**:  
+Triggered when the next (or previous) image in the gallery has been loaded.
+
 ### Fullscreen mode
 Fullscreen mode is enabled by adding the CSS class "modal-fullscreen" to the modal element:
 

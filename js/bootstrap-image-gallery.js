@@ -1,5 +1,5 @@
 /*
- * Bootstrap Image Gallery 2.4
+ * Bootstrap Image Gallery 2.5
  * https://github.com/blueimp/Bootstrap-Image-Gallery
  *
  * Copyright 2011, Sebastian Tschan
@@ -124,6 +124,7 @@
                 modal = this.$element,
                 index = this.options.index,
                 oldImg;
+            modal.trigger('beforeLoad');
             this.abortLoad();
             this.stopSlideShow();
             // The timeout prevents displaying a loading status,
@@ -141,8 +142,10 @@
             this.loadingImage = loadImage(
                 this.urls[index],
                 function (img) {
+                    $this.img = img;
                     window.clearTimeout($this._loadingTimeout);
                     modal.removeClass('modal-loading');
+                    modal.trigger('load');
                     $this.showImage(img);
                     $this.startSlideShow();
                 },
