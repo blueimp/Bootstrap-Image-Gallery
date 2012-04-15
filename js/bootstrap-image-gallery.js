@@ -146,8 +146,8 @@
                     $this.img = img;
                     window.clearTimeout($this._loadingTimeout);
                     modal.removeClass('modal-loading');
-                    modal.trigger('load', [$this.events_data[index]]);
                     $this.showImage(img);
+                    modal.trigger('load', [$this.events_data[index]]);
                     $this.startSlideShow();
                 },
                 $this.loadImageOptions
