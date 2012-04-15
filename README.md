@@ -91,6 +91,12 @@ Triggered when the next (or previous) image in the gallery is about to be loaded
 * **load**:  
 Triggered when the next (or previous) image in the gallery has been loaded.
 
+Both events receive one extra argument, the value of a data-event-data attribute of the original link.
+
+```html
+  <div class="gallery-item" data-href="banana.jpg" title="Banana" "data-event-data"="serialize some json here">Banana</div>
+```
+
 ### Fullscreen mode
 Fullscreen mode is enabled by adding the CSS class "modal-fullscreen" to the modal element:
 
