@@ -91,10 +91,15 @@ Triggered when the next (or previous) image in the gallery is about to be loaded
 * **load**:  
 Triggered when the next (or previous) image in the gallery has been loaded.
 
-Both events receive one extra argument, the value of a data-event-data attribute of the original link.
+Inside of the event callbacks, it is possible to access the list of (filtered) element nodes and in the case of the *load* event, also the loaded image:
 
-```html
-  <div class="gallery-item" data-href="banana.jpg" title="Banana" "data-event-data"="serialize some json here">Banana</div>
+```js
+$('#modal-gallery').on('load', function () {
+    var modalData = $(this).data('modal');
+    // modalData.$links is the list of (filtered) element nodes as jQuery object
+    // modalData.image is the image (or canvas) element for the loaded image
+    // modalData.options.index is the index of the current link
+});
 ```
 
 ### Fullscreen mode
