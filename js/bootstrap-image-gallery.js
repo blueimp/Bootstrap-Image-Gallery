@@ -72,6 +72,7 @@
                 if ($this.urls[$this.urls.length - 1] !== url) {
                     $this.urls.push(url);
                     $this.titles.push(node.title);
+                    $this.events_data.push($(node).data("event-data"));
                     if (url === options.href) {
                         options.index = index;
                     }
@@ -124,7 +125,7 @@
                 modal = this.$element,
                 index = this.options.index,
                 oldImg;
-            modal.trigger('beforeLoad');
+            modal.trigger('beforeLoad', [$this.events_data[index]]);
             this.abortLoad();
             this.stopSlideShow();
             // The timeout prevents displaying a loading status,
@@ -145,8 +146,8 @@
                     $this.img = img;
                     window.clearTimeout($this._loadingTimeout);
                     modal.removeClass('modal-loading');
-                    modal.trigger('load');
                     $this.showImage(img);
+                    modal.trigger('load', [$this.events_data[index]]);
                     $this.startSlideShow();
                 },
                 $this.loadImageOptions
@@ -286,6 +287,7 @@
                     windowHeight = $(window).height();
                 this.urls = [];
                 this.titles = [];
+                this.events_data = [];
                 if (modal.hasClass('modal-fullscreen')) {
                     this.loadImageOptions = {
                         minWidth: windowWidth,
