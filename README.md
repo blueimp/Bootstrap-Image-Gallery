@@ -84,20 +84,24 @@ The Image Gallery follows the guideline of the Bootstrap JavaScript collection. 
 More Options are documented at the start of the Image Gallery source file.
 
 ### Events
-In addition to the modal events provided by [Bootstrap Modal](http://twitter.github.com/bootstrap/javascript.html#modals), the Image Gallery provides two additional events:
+In addition to the modal events provided by [Bootstrap Modal](http://twitter.github.com/bootstrap/javascript.html#modals), the Image Gallery provides four additional events:
 
 * **beforeLoad**:  
 Triggered when the next (or previous) image in the gallery is about to be loaded.
 * **load**:  
 Triggered when the next (or previous) image in the gallery has been loaded.
+* **display**:  
+Triggered when the next (or previous) image in the gallery is about to be displayed.
+* **displayed**:  
+Triggered when the next (or previous) image in the gallery has been displayed.
 
-Inside of the event callbacks, it is possible to access the list of (filtered) element nodes and in the case of the *load* event, also the loaded image:
+Inside of the event callbacks, it is possible to access the list of (filtered) element nodes, the current index and (except for the *beforeLoad* event) also the loaded image:
 
 ```js
 $('#modal-gallery').on('load', function () {
     var modalData = $(this).data('modal');
     // modalData.$links is the list of (filtered) element nodes as jQuery object
-    // modalData.image is the image (or canvas) element for the loaded image
+    // modalData.img is the img (or canvas) element for the loaded image
     // modalData.options.index is the index of the current link
 });
 ```

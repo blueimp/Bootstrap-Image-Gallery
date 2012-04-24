@@ -1,5 +1,5 @@
 /*
- * Bootstrap Image Gallery 2.6
+ * Bootstrap Image Gallery 2.7
  * https://github.com/blueimp/Bootstrap-Image-Gallery
  *
  * Copyright 2011, Sebastian Tschan
@@ -18,7 +18,7 @@
         // Register as an anonymous AMD module:
         define([
             'jquery',
-            './load-image.js',
+            'load-image',
             'bootstrap'
         ], factory);
     } else {
@@ -123,9 +123,9 @@
                 index = this.options.index,
                 url = this.getUrl(this.$links[index]),
                 oldImg;
-            modal.trigger('beforeLoad');
             this.abortLoad();
             this.stopSlideShow();
+            modal.trigger('beforeLoad');
             // The timeout prevents displaying a loading status,
             // if the image has already been loaded:
             this._loadingTimeout = window.setTimeout(function () {
@@ -144,14 +144,14 @@
             this._loadingImage = loadImage(
                 url,
                 function (img) {
-                    $this.image = img;
+                    $this.img = img;
                     window.clearTimeout($this._loadingTimeout);
                     modal.removeClass('modal-loading');
-                    $this.showImage(img);
                     modal.trigger('load');
+                    $this.showImage(img);
                     $this.startSlideShow();
                 },
-                $this._loadImageOptions
+                this._loadImageOptions
             );
             this.preloadImages();
         },
@@ -181,7 +181,30 @@
             }
             modalImage.append(img);
             forceReflow = img.offsetWidth;
-            $(img).addClass('in');
+            modal.trigger('display');
+            if (transition) {
+                if (modal.is(':visible')) {
+                    $(img).on(
+                        $.support.transition.end,
+                        function (e) {
+                            // Make sure we don't respond to other transitions events
+                            // in the container element, e.g. from button elements:
+                            if (e.target === img) {
+                                $(img).off($.support.transition.end);
+                                modal.trigger('displayed');
+                            }
+                        }
+                    ).addClass('in');
+                } else {
+                    $(img).addClass('in');
+                    modal.one('shown', function () {
+                        modal.trigger('displayed');
+                    });
+                }
+            } else {
+                $(img).addClass('in');
+                modal.trigger('displayed');
+            }
         },
         abortLoad: function () {
             if (this._loadingImage) {
