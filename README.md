@@ -113,6 +113,12 @@ Fullscreen mode is enabled by adding the CSS class "modal-fullscreen" to the mod
 $('#modal-gallery').addClass('modal-fullscreen');
 ```
 
+To automatically stretch images smaller then the window size, also add the class "modal-fullscreen-stretch":
+
+```js
+$('#modal-gallery').addClass('modal-fullscreen modal-fullscreen-stretch');
+```
+
 Please refer to the demo source code on how to enable real fullscreen mode on supported browsers.
 
 ### Deinitialize the click event listener

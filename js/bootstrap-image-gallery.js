@@ -1,5 +1,5 @@
 /*
- * Bootstrap Image Gallery 2.7
+ * Bootstrap Image Gallery 2.8
  * https://github.com/blueimp/Bootstrap-Image-Gallery
  *
  * Copyright 2011, Sebastian Tschan
@@ -311,12 +311,14 @@
                     windowHeight = $(window).height();
                 if (modal.hasClass('modal-fullscreen')) {
                     this._loadImageOptions = {
-                        minWidth: windowWidth,
-                        minHeight: windowHeight,
                         maxWidth: windowWidth,
                         maxHeight: windowHeight,
                         canvas: options.canvas
                     };
+                    if (modal.hasClass('modal-fullscreen-stretch')) {
+                        this._loadImageOptions.minWidth = windowWidth;
+                        this._loadImageOptions.minHeight = windowHeight;
+                    }
                 } else {
                     this._loadImageOptions = {
                         maxWidth: windowWidth - options.offsetWidth,
