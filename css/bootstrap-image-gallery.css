@@ -32,7 +32,7 @@
 }
 .modal-gallery .modal-image:hover:before,
 .modal-gallery .modal-image:hover:after {
-  content: '‹';
+  content: '\2039';
   position: absolute;
   top: 50%;
   left: 15px;
@@ -54,7 +54,7 @@
   z-index: 1;
 }
 .modal-gallery .modal-image:hover:after {
-  content: '›';
+  content: '\203A';
   left: auto;
   right: 15px;
 }
