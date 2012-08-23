@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/blueimp/Bootstrap-Image-Gallery.png)](http://travis-ci.org/blueimp/Bootstrap-Image-Gallery)
 # Bootstrap Image Gallery
 
 ## Demo
