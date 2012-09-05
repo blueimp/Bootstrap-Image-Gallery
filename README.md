@@ -4,8 +4,12 @@
 [Bootstrap Image Gallery Demo](http://blueimp.github.com/Bootstrap-Image-Gallery/)
 
 ## Description
-Bootstrap Image Gallery is an extension to the [Modal](http://twitter.github.com/bootstrap/javascript.html#modal) dialog of Twitter's [Bootstrap](http://twitter.github.com/bootstrap/) toolkit, to ease navigation between a set of gallery images.  
+Bootstrap Image Gallery is an extension to the [Modal](http://twitter.github.com/bootstrap/javascript.html#modal) dialog of Twitter's [Bootstrap](http://twitter.github.com/bootstrap/) toolkit, to ease navigation between a set of gallery images.
 It features mouse and keyboard navigation, transition effects, fullscreen mode and slideshow functionality.
+
+## Mobile Support
+
+Please see [Modal Responsive Fix](https://github.com/niftylettuce/twitter-bootstrap-jquery-plugins/tree/master/modal-responsive-fix) if you'd like to support mobile/resize functionality.
 
 ## Usage
 
@@ -86,13 +90,13 @@ More Options are documented at the start of the Image Gallery source file.
 ### Events
 In addition to the modal events provided by [Bootstrap Modal](http://twitter.github.com/bootstrap/javascript.html#modals), the Image Gallery provides four additional events:
 
-* **beforeLoad**:  
+* **beforeLoad**:
 Triggered when the next (or previous) image in the gallery is about to be loaded.
-* **load**:  
+* **load**:
 Triggered when the next (or previous) image in the gallery has been loaded.
-* **display**:  
+* **display**:
 Triggered when the next (or previous) image in the gallery is about to be displayed.
-* **displayed**:  
+* **displayed**:
 Triggered when the next (or previous) image in the gallery has been displayed.
 
 Inside of the event callbacks, it is possible to access the list of (filtered) element nodes, the current index and (except for the *beforeLoad* event) also the loaded image:
