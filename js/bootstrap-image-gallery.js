@@ -307,8 +307,8 @@
             if (!this.isShown && this.$element.hasClass('modal-gallery')) {
                 var modal = this.$element,
                     options = this.options,
-                    windowWidth = $(window).width(),
-                    windowHeight = $(window).height();
+                    windowWidth = parseInt($(window).width(), 10),
+                    windowHeight = parseInt($(window).height(), 10);
                 if (modal.hasClass('modal-fullscreen')) {
                     this._loadImageOptions = {
                         maxWidth: windowWidth,
