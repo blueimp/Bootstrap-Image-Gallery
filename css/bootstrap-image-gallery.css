@@ -1,6 +1,6 @@
 @charset 'UTF-8';
 /*
- * Bootstrap Image Gallery CSS 2.5
+ * Bootstrap Image Gallery CSS 2.5.1
  * https://github.com/blueimp/Bootstrap-Image-Gallery
  *
  * Copyright 2011, Sebastian Tschan
@@ -96,6 +96,8 @@
           border-radius: 0;
   background: transparent;
   overflow: hidden;
+  right: 0;
+  left: 0;
 }
 .modal-fullscreen.modal-loading {
   border: 0;
@@ -134,7 +136,7 @@
   opacity: 1;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 767px) {
   .modal-gallery .btn span {
     display: none;
   }
