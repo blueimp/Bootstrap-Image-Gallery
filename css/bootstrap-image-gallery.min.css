@@ -11,11 +11,11 @@
 .modal-gallery .modal-image *{position:absolute;top:0;opacity:0;filter:alpha(opacity=0);}
 .modal-gallery.fade .modal-image *{-webkit-transition:opacity 0.5s linear;-moz-transition:opacity 0.5s linear;-ms-transition:opacity 0.5s linear;-o-transition:opacity 0.5s linear;transition:opacity 0.5s linear;}
 .modal-gallery .modal-image *.in{opacity:1;filter:alpha(opacity=100);}
-.modal-fullscreen{border:none;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;background:transparent;overflow:hidden;}
+.modal-fullscreen{border:none;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;background:transparent;overflow:hidden;right:0;left:0;}
 .modal-fullscreen.modal-loading{border:0;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;}
 .modal-fullscreen .modal-body{padding:0;}
 .modal-fullscreen .modal-header,.modal-fullscreen .modal-footer{position:absolute;top:0;right:0;left:0;background:transparent;border:0;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;opacity:0;z-index:2000;}
 .modal-fullscreen .modal-footer{top:auto;bottom:0;}
 .modal-fullscreen .close,.modal-fullscreen .modal-title{color:#fff;text-shadow:0 0 2px rgba(33, 33, 33, 0.8);}
 .modal-fullscreen .modal-header:hover,.modal-fullscreen .modal-footer:hover{opacity:1;}
-@media (max-width:480px){.modal-gallery .btn span{display:none;}}
+@media (max-width:767px){.modal-gallery .btn span{display:none;}}
