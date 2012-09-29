@@ -22,7 +22,7 @@ Add the following HTML snippet to the body of your webpage:
 
 ```html
 <!-- modal-gallery is the modal dialog used for the image gallery -->
-<div id="modal-gallery" class="modal modal-gallery hide fade">
+<div id="modal-gallery" class="modal modal-gallery hide fade" tabindex="-1">
     <div class="modal-header">
         <a class="close" data-dismiss="modal">&times;</a>
         <h3 class="modal-title"></h3>
