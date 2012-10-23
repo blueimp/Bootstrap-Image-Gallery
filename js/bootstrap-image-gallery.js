@@ -390,7 +390,7 @@
                     options.href = link.prop('href') || link.data('href');
                     options.delegate = link[0] !== this ? this : document;
                     if (link.data('album')){
-                        options.selector = 'a[data-album='+link.data('album')+']';
+                        options.selector = 'a[data-album="'+link.data('album')+'"]';
                     }
                     if (data) {
                         $.extend(data.options, options);
