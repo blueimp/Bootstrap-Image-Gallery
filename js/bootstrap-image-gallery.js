@@ -1,4 +1,7 @@
 /*
+ * Bootstrap Image Gallery 2.8.1 with album Support
+ * album Support by Martin Brugnara - hkmartinb1993@gmail.com 
+ *
  * Bootstrap Image Gallery 2.8.1
  * https://github.com/blueimp/Bootstrap-Image-Gallery
  *
@@ -73,6 +76,7 @@
                         options.index = index;
                     }
                 });
+            console.log(this.$links);
             if (!this.$links[options.index]) {
                 options.index = 0;
             }
@@ -379,11 +383,15 @@
                 if (!options.selector) {
                     options.selector = 'a[rel=gallery]';
                 }
+
                 link = $(e.target).closest(options.selector);
                 if (link.length && modal.length) {
                     e.preventDefault();
                     options.href = link.prop('href') || link.data('href');
                     options.delegate = link[0] !== this ? this : document;
+                    if (link.data('album')){
+                        options.selector = 'a[data-album="'+link.data('album')+'"]';
+                    }
                     if (data) {
                         $.extend(data.options, options);
                     }

@@ -18,6 +18,7 @@ Add the following HTML snippet to the head section of your webpage:
 <link rel="stylesheet" href="css/bootstrap-image-gallery.min.css">
 ```
 
+
 Add the following HTML snippet to the body of your webpage:
 
 ```html
@@ -67,6 +68,22 @@ It is also possible to use different elements than links for the gallery functio
     <div class="gallery-item" data-href="apple.jpg" title="Apple">Apple</div>
     <div class="gallery-item" data-href="orange.jpg" title="Orange">Orange</div>
 </div>
+```
+
+If you like to use album future add data-album to 'a' tag:
+```html
+<div id="gallery" data-toggle="modal-gallery" data-target="#modal-gallery">
+    <!-- one album / one carousel session -->
+    <a href="banana.jpg" title="Banana" rel="gallery" data-album="summer">Banana</a>
+    <a href="apple.jpg" title="Apple" rel="gallery" data-album="summer">Apple</a>
+    <a href="orange.jpg" title="Orange" rel="gallery" data-album="summer">Orange</a>
+    
+    <!--  another album / another carousel session -->
+    <a href="banana.jpg" title="Banana" rel="gallery" data-album="winter">Banana</a>
+    <a href="apple.jpg" title="Apple" rel="gallery" data-album="winter">Apple</a>
+    <a href="orange.jpg" title="Orange" rel="gallery" data-album="winter">Orange</a>
+</div>
+
 ```
 
 ## API
