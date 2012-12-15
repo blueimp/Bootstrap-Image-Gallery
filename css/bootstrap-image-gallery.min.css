@@ -1,5 +1,6 @@
 @charset 'UTF-8';
 .modal-gallery{width:auto;max-height:none;outline:none;}
+.modal-gallery.fade.in{top:50%;}
 .modal-gallery .modal-body{max-height:none;}
 .modal-gallery .modal-title{display:inline-block;max-height:54px;overflow:hidden;}
 .modal-gallery .modal-image{position:relative;margin:auto;min-width:128px;min-height:128px;overflow:hidden;cursor:pointer;}

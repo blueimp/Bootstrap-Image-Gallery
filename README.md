@@ -131,8 +131,8 @@ Please also have a look at the [Bootstrap JS Guidelines](https://github.com/twit
 
 ## Requirements
 * [jQuery](http://jquery.com/) v. 1.7+
-* [Bootstrap Modal](http://twitter.github.com/bootstrap/javascript.html#modal) v. 2.0+
-* [JavaScript Load Image](https://github.com/blueimp/JavaScript-Load-Image) v. 1.1.4+
+* [Bootstrap Modal](http://twitter.github.com/bootstrap/javascript.html#modal) v. 2.2.2+
+* [JavaScript Load Image](https://github.com/blueimp/JavaScript-Load-Image) v. 1.2.3+
 
 ## License
 Released under the [MIT license](http://www.opensource.org/licenses/MIT).
