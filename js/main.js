@@ -52,6 +52,17 @@ $(function () {
         }
     });
 
+    // Toggle fullscreen wide button:
+    $('#toggle-fullscreen-wide').button().click(function () {
+        var button = $(this);
+        if (!button.hasClass('active')) {
+            $('#modal-gallery').addClass('modal-fullscreen modal-fullscreen-wide');
+        }
+        else {
+            $('#modal-gallery').removeClass('modal-fullscreen modal-fullscreen-wide');
+        }
+    });
+
     // Load images via flickr for demonstration purposes:
     $.ajax({
         url: 'http://api.flickr.com/services/rest/',
