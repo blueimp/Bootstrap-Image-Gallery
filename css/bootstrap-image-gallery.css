@@ -18,6 +18,10 @@
 .modal-gallery.fade.in {
   top: 50%;
 }
+.modal-gallery.modal-fullscreen-wide.in {
+  bottom: 0;
+  top: 0;
+}
 .modal-gallery .modal-body {
   max-height: none;
 }
@@ -133,6 +137,8 @@
   color: #fff;
 	text-shadow: 0 0 2px rgba(33, 33, 33, 0.8);
 }
+.modal-gallery.modal-fullscreen-wide:hover .modal-header,
+.modal-gallery.modal-fullscreen-wide:hover .modal-footer,
 .modal-fullscreen .modal-header:hover,
 .modal-fullscreen .modal-footer:hover {
   opacity: 1;

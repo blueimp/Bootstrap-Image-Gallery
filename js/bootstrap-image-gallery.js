@@ -57,7 +57,11 @@
         // Shows the next image after the given time in ms (0 = disabled):
         slideshow: 0,
         // Defines the image division for previous/next clicks:
-        imageClickDivision: 0.5
+        imageClickDivision: 0.5,
+        // Use wheel handler or not (0 = disabled)
+        wheelHandler: 1,
+        // Use fullscreen wide mode (0 = disabled)
+        wide: 0
     });
     var originalShow = $.fn.modal.Constructor.prototype.show,
         originalHide = $.fn.modal.Constructor.prototype.hide;
@@ -170,14 +174,26 @@
             if (transition) {
                 clone = modal.clone().hide().appendTo(document.body);
             }
-            if ($(window).width() > 767) {
+            if (this.options.wide == 1 && $(window).width() > 767) {
+                method.call(modal.stop(), {
+                    'margin-left': -((clone || modal).outerWidth() / 2),
+                    'margin-top': '0',
+                    'padding-top': (($(window).height() - img.height) / 2),
+                    'width': $(window).width()
+                });
+            }
+            else if ($(window).width() > 767) {
                 method.call(modal.stop(), {
                     'margin-top': -((clone || modal).outerHeight() / 2),
-                    'margin-left': -((clone || modal).outerWidth() / 2)
+                    'margin-left': -((clone || modal).outerWidth() / 2),
+                    'padding-top': '0',
+                    'width': 'auto'
                 });
             } else {
                 modal.css({
-                    top: ($(window).height() - (clone || modal).outerHeight()) / 2
+                    'padding-top': '0',
+                    top: ($(window).height() - (clone || modal).outerHeight()) / 2,
+                    'width': 'auto'
                 });
             }
             if (clone) {
@@ -286,16 +302,17 @@
             modal.find('.modal-slideshow').on('click.modal-gallery', function (e) {
                 $this.toggleSlideShow(e);
             });
-            $(document)
-                .on('keydown.modal-gallery', function (e) {
-                    $this.keyHandler(e);
-                })
-                .on(
+            $(document).on('keydown.modal-gallery', function (e) {
+                $this.keyHandler(e);
+            });
+            if (this.options.wheelhandler == 1) {
+                $(document).on(
                     'mousewheel.modal-gallery, DOMMouseScroll.modal-gallery',
                     function (e) {
                         $this.wheelHandler(e);
                     }
                 );
+            }
         },
         destroyGalleryEvents: function () {
             var modal = this.$element;
@@ -323,21 +340,40 @@
                         this._loadImageOptions.minWidth = windowWidth;
                         this._loadImageOptions.minHeight = windowHeight;
                     }
+                    else if (modal.hasClass('modal-fullscreen-wide')) {
+                        this.options.wide = 1;
+                    }
+                    else {
+                        this.options.wide = 0;
+                    }
                 } else {
                     this._loadImageOptions = {
                         maxWidth: windowWidth - options.offsetWidth,
                         maxHeight: windowHeight - options.offsetHeight,
                         canvas: options.canvas
                     };
+                    this.options.wide = 0;
                 }
-                if (windowWidth > 767) {
+                if (this.options.wide == 1 && windowWidth > 767) {
+                    modal.css({
+                        'margin-left': -(modal.outerWidth() / 2),
+                        'margin-top': '0',
+                        'padding-top': ((windowHeight - modal.outerHeight()) / 2),
+                        'width': windowWidth
+                    });
+                }
+                else if (windowWidth > 767) {
                     modal.css({
                         'margin-top': -(modal.outerHeight() / 2),
-                        'margin-left': -(modal.outerWidth() / 2)
+                        'margin-left': -(modal.outerWidth() / 2),
+                        'padding-top': '0',
+                        'width': 'auto'
                     });
                 } else {
                     modal.css({
-                        top: ($(window).height() - modal.outerHeight()) / 2
+                        'padding-top': '0',
+                        top: ($(window).height() - modal.outerHeight()) / 2,
+                        'width': 'auto'
                     });
                 }
                 this.initGalleryEvents();
