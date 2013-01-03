@@ -377,7 +377,7 @@
                     options = $.extend(modal.data(), options);
                 }
                 if (!options.selector) {
-                    options.selector = 'a[rel=gallery]';
+                    options.selector = 'a[data-gallery=gallery], a[rel=gallery]';
                 }
                 link = $(e.target).closest(options.selector);
                 if (link.length && modal.length) {
