@@ -1,5 +1,5 @@
 /*
- * Bootstrap Image Gallery 2.8.1
+ * Bootstrap Image Gallery 2.9
  * https://github.com/blueimp/Bootstrap-Image-Gallery
  *
  * Copyright 2011, Sebastian Tschan
@@ -377,7 +377,7 @@
                     options = $.extend(modal.data(), options);
                 }
                 if (!options.selector) {
-                    options.selector = 'a[data-gallery=gallery], a[rel=gallery]';
+                    options.selector = 'a[data-gallery=gallery]';
                 }
                 link = $(e.target).closest(options.selector);
                 if (link.length && modal.length) {

@@ -1,5 +1,5 @@
 /*
- * Bootstrap Image Gallery JS Example 1.0
+ * Bootstrap Image Gallery JS Example 2.9
  * https://github.com/blueimp/Bootstrap-Image-Gallery
  *
  * Copyright 2012, Sebastian Tschan
@@ -68,7 +68,7 @@ $(function () {
         $.each(data.photos.photo, function (index, photo) {
             url = 'http://farm' + photo.farm + '.static.flickr.com/' +
                 photo.server + '/' + photo.id + '_' + photo.secret;
-            $('<a rel="gallery"/>')
+            $('<a data-gallery="gallery"/>')
                 .append($('<img>').prop('src', url + '_s.jpg'))
                 .prop('href', url + '_b.jpg')
                 .prop('title', photo.title)
