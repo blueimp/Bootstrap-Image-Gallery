@@ -47,12 +47,12 @@ Include the following scripts:
 ```
 
 ### Initialization
-Initialize the Image Gallery widget by adding the following **data-attributes** to a container element containing a set of links to image files with the attribute **rel="gallery"**:
+Initialize the Image Gallery widget by adding the following **data-attributes** to a container element containing a set of links to image files with the attribute **rel="gallery"** or **data-gallery="gallery"**:
 
 ```html
 <div id="gallery" data-toggle="modal-gallery" data-target="#modal-gallery">
     <a href="banana.jpg" title="Banana" rel="gallery">Banana</a>
-    <a href="apple.jpg" title="Apple" rel="gallery">Apple</a>
+    <a href="apple.jpg" title="Apple" data-gallery="gallery">Apple</a>
     <a href="orange.jpg" title="Orange" rel="gallery">Orange</a>
 </div>
 ```
