@@ -80,6 +80,9 @@
         getUrl: function (element) {
             return element.href || $(element).data('href');
         },
+        getDownloadUrl: function (element) {
+            return $(element).data('download');
+        },
         startSlideShow: function () {
             var $this = this;
             if (this.options.slideshow) {
@@ -122,6 +125,7 @@
                 modal = this.$element,
                 index = this.options.index,
                 url = this.getUrl(this.$links[index]),
+                download = this.getDownloadUrl(this.$links[index]),
                 oldImg;
             this.abortLoad();
             this.stopSlideShow();
@@ -139,7 +143,7 @@
             modal.find('.modal-title').text(this.$links[index].title);
             modal.find('.modal-download').prop(
                 'href',
-                url
+                download || url
             );
             this._loadingImage = loadImage(
                 url,
