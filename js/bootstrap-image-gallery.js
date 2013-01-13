@@ -1,5 +1,5 @@
 /*
- * Bootstrap Image Gallery 2.9
+ * Bootstrap Image Gallery 2.10
  * https://github.com/blueimp/Bootstrap-Image-Gallery
  *
  * Copyright 2011, Sebastian Tschan
