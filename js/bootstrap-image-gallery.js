@@ -170,7 +170,7 @@
                 width: img.width,
                 height: img.height
             });
-            modal.find('.modal-title').css({ width: Math.max(img.width, 380) });
+            modal.find('.modal-title').css({ maxWidth: Math.max(img.width, 380) });
             if (transition) {
                 clone = modal.clone().hide().appendTo(document.body);
             }
