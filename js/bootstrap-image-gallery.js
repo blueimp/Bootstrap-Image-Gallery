@@ -141,6 +141,13 @@
                 oldImg.remove();
             }, 3000);
             modal.find('.modal-title').text(this.$links[index].title);
+            var descriptionElement = $(this.$links[index]).find('div[data-gallery-description]');
+            if(descriptionElement) {
+                modal.find('.modal-description').css('display', 'block').html(descriptionElement.html());
+            }
+            else {
+                modal.find('.modal-description').css('display', 'none');
+            }
             modal.find('.modal-download').prop(
                 'href',
                 download || url
@@ -171,6 +178,7 @@
                 height: img.height
             });
             modal.find('.modal-title').css({ width: Math.max(img.width, 380) });
+            modal.find('.modal-description').css({ width: Math.max(img.width, 380) });
             if (transition) {
                 clone = modal.clone().hide().appendTo(document.body);
             }
@@ -300,6 +308,10 @@
                         $this.wheelHandler(e);
                     }
                 );
+
+            $(window).on('resize', function (e) {
+                $this.createLoadImageOptions(true);
+            });
         },
         destroyGalleryEvents: function () {
             var modal = this.$element;
@@ -310,40 +322,63 @@
             $(document)
                 .off('keydown.modal-gallery')
                 .off('mousewheel.modal-gallery, DOMMouseScroll.modal-gallery');
+            $(window).off('resize');
+        },
+        createLoadImageOptions: function (resize_image) {
+            var modal = this.$element,
+                options = this.options,
+                windowWidth = $(window).width(),
+                windowHeight = $(window).height();
+
+            
+            // mobile
+            if(windowHeight < 500 && options < 500) {
+                this.options.offsetWidth = options.offsetWidth = 15;
+                this.options.offsetHeight = options.offsetHeight = 40;
+            }
+
+            // bug fix, if our browser window height < 320 we can't see the image
+            if(windowHeight < 320) {
+                windowHeight = 320;
+            }
+             
+
+            if (modal.hasClass('modal-fullscreen')) {
+                this._loadImageOptions = {
+                    maxWidth: windowWidth,
+                    maxHeight: windowHeight,
+                    canvas: options.canvas
+                };
+                if (modal.hasClass('modal-fullscreen-stretch')) {
+                    this._loadImageOptions.minWidth = windowWidth;
+                    this._loadImageOptions.minHeight = windowHeight;
+                }
+            } else {
+                this._loadImageOptions = {
+                    maxWidth: windowWidth - options.offsetWidth,
+                    maxHeight: windowHeight - options.offsetHeight,
+                    canvas: options.canvas
+                };
+            }
+            if(resize_image) { 
+                this.loadImage();
+            }
+            if (windowWidth > 767) {
+                modal.css({
+                    'margin-top': -(modal.outerHeight() / 2),
+                    'margin-left': -(modal.outerWidth() / 2)
+                });
+            } else {
+                modal.css({
+                    top: ($(window).height() - modal.outerHeight()) / 2
+                });
+            }
         },
         show: function () {
             if (!this.isShown && this.$element.hasClass('modal-gallery')) {
                 var modal = this.$element,
-                    options = this.options,
-                    windowWidth = $(window).width(),
-                    windowHeight = $(window).height();
-                if (modal.hasClass('modal-fullscreen')) {
-                    this._loadImageOptions = {
-                        maxWidth: windowWidth,
-                        maxHeight: windowHeight,
-                        canvas: options.canvas
-                    };
-                    if (modal.hasClass('modal-fullscreen-stretch')) {
-                        this._loadImageOptions.minWidth = windowWidth;
-                        this._loadImageOptions.minHeight = windowHeight;
-                    }
-                } else {
-                    this._loadImageOptions = {
-                        maxWidth: windowWidth - options.offsetWidth,
-                        maxHeight: windowHeight - options.offsetHeight,
-                        canvas: options.canvas
-                    };
-                }
-                if (windowWidth > 767) {
-                    modal.css({
-                        'margin-top': -(modal.outerHeight() / 2),
-                        'margin-left': -(modal.outerWidth() / 2)
-                    });
-                } else {
-                    modal.css({
-                        top: ($(window).height() - modal.outerHeight()) / 2
-                    });
-                }
+                    options = this.options;
+                this.createLoadImageOptions();
                 this.initGalleryEvents();
                 this.initLinks();
                 if (this.$links.length) {
