@@ -93,6 +93,12 @@
   opacity: 1;
   filter: alpha(opacity=100);
 }
+div[data-gallery-description] {
+  display:none;
+}
+.modal-gallery .modal-description {
+  margin-top: 10px;
+}
 .modal-fullscreen {
   border: none;
   -webkit-border-radius: 0;
@@ -146,4 +152,8 @@
     right: 0;
     left: 0;
   }
+  .modal-gallery .modal-description {
+    display:none !important;
+  }
 }
+

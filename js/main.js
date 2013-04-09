@@ -68,11 +68,18 @@ $(function () {
         $.each(data.photos.photo, function (index, photo) {
             url = 'http://farm' + photo.farm + '.static.flickr.com/' +
                 photo.server + '/' + photo.id + '_' + photo.secret;
-            $('<a data-gallery="gallery"/>')
+
+            var element = $('<a data-gallery="gallery"/>')
                 .append($('<img>').prop('src', url + '_s.jpg'))
                 .prop('href', url + '_b.jpg')
-                .prop('title', photo.title)
-                .appendTo(gallery);
+                .prop('title', photo.title);
+
+            if((index + 1) % 2 == 0) {
+                element.append($('<div data-gallery-description="true">')
+                    .html('This is a description<br />for the image #' + (index + 1)));
+            }
+
+            element.appendTo(gallery);
         });
     });
 });
