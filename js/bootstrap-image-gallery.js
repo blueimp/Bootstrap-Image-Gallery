@@ -182,16 +182,12 @@
             if (transition) {
                 clone = modal.clone().hide().appendTo(document.body);
             }
-            if ($(window).width() > 767) {
-                method.call(modal.stop(), {
-                    'margin-top': -((clone || modal).outerHeight() / 2),
-                    'margin-left': -((clone || modal).outerWidth() / 2)
-                });
-            } else {
-                modal.css({
-                    top: ($(window).height() - (clone || modal).outerHeight()) / 2
-                });
-            }
+            modal.css({
+                top: ($(window).height() - (clone || modal).outerHeight()) / 2,
+                left: ($(window).width() - (clone || modal).outerWidth()) / 2,
+                'margin-left': 0,
+                'margin-top': 0
+            });
             if (clone) {
                 clone.remove();
             }
@@ -332,12 +328,12 @@
 
             
             // mobile
-            if(windowHeight < 500 && options < 500) {
+            if(windowHeight < 500) {
                 this.options.offsetWidth = options.offsetWidth = 15;
                 this.options.offsetHeight = options.offsetHeight = 40;
             }
 
-            // bug fix, if our browser window height < 320 we can't see the image
+            // if our browser window height < 320 we can't see the image
             if(windowHeight < 320) {
                 windowHeight = 320;
             }
@@ -363,16 +359,12 @@
             if(resize_image) { 
                 this.loadImage();
             }
-            if (windowWidth > 767) {
-                modal.css({
-                    'margin-top': -(modal.outerHeight() / 2),
-                    'margin-left': -(modal.outerWidth() / 2)
-                });
-            } else {
-                modal.css({
-                    top: ($(window).height() - modal.outerHeight()) / 2
-                });
-            }
+            modal.css({
+                top: ($(window).height() - modal.outerHeight()) / 2,
+                left: ($(window).width() - modal.innerHeight()) / 2,
+                'margin-left': 0,
+                'margin-top': 0
+            });
         },
         show: function () {
             if (!this.isShown && this.$element.hasClass('modal-gallery')) {
