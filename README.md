@@ -1,7 +1,10 @@
 # Bootstrap Image Gallery
 
+## Notice
+[blueimp Gallery](http://blueimp.github.io/Gallery/) is a completely rewritten, much improved image gallery, replacing this version.
+
 ## Demo
-[Bootstrap Image Gallery Demo](http://blueimp.github.com/Bootstrap-Image-Gallery/)
+[Bootstrap Image Gallery Demo](http://blueimp.github.io/Bootstrap-Image-Gallery/)
 
 ## Description
 Bootstrap Image Gallery is an extension to the [Modal](http://twitter.github.com/bootstrap/javascript.html#modal) dialog of Twitter's [Bootstrap](http://twitter.github.com/bootstrap/) toolkit, to ease navigation between a set of gallery images.  
@@ -13,9 +16,11 @@ It features mouse and keyboard navigation, transition effects, fullscreen mode a
 Add the following HTML snippet to the head section of your webpage:
 
 ```html
-<link rel="stylesheet" href="http://blueimp.github.com/cdn/css/bootstrap.min.css">
-<!--[if lt IE 7]><link rel="stylesheet" href="http://blueimp.github.com/cdn/css/bootstrap-ie6.min.css"><![endif]-->
-<link rel="stylesheet" href="css/bootstrap-image-gallery.min.css">
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/bootstrap-responsive.css">
+<!--[if lt IE 7]><link rel="stylesheet" href="css/bootstrap-ie6.css"><![endif]-->
+<link rel="stylesheet" href="css/bootstrap-image-gallery.css">
 ```
 
 Add the following HTML snippet to the body of your webpage:
@@ -40,10 +45,11 @@ Add the following HTML snippet to the body of your webpage:
 Include the following scripts:
 
 ```html
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="http://blueimp.github.com/cdn/js/bootstrap.min.js"></script>
-<script src="http://blueimp.github.com/JavaScript-Load-Image/load-image.min.js"></script>
-<script src="js/bootstrap-image-gallery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/load-image.js"></script>
+<script src="js/bootstrap-image-gallery.js"></script>
+<script src="js/main.js"></script>
 ```
 
 ### Initialization
@@ -131,8 +137,8 @@ Please also have a look at the [Bootstrap JS Guidelines](https://github.com/twit
 
 ## Requirements
 * [jQuery](http://jquery.com/) v. 1.7+
-* [Bootstrap Modal](http://twitter.github.com/bootstrap/javascript.html#modal) v. 2.2.2+
-* [JavaScript Load Image](https://github.com/blueimp/JavaScript-Load-Image) v. 1.2.3+
+* [Bootstrap Modal](http://twitter.github.io/bootstrap/javascript.html#modals) v. 2.3.2+
+* [JavaScript Load Image](https://github.com/blueimp/JavaScript-Load-Image) v. 1.7+ (included)
 
 ## License
 Released under the [MIT license](http://www.opensource.org/licenses/MIT).

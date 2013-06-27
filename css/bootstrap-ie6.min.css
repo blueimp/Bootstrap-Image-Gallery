@@ -1,0 +1,11 @@
+@charset 'UTF-8';
+.span1,.span2,.span3,.span4,.span5,.span6,.span7,.span8,.span9,.span10,.span11,.span12{display:inline;float:left;margin-left:20px;}
+input{width:auto;}
+.modal{position:absolute;top:50%;filter:none;}
+.navbar-fixed-top{position:absolute;}
+.nav li{display:block;float:left;}
+.nav li a{display:block;padding:10px 10px 11px;line-height:19px;}
+.navbar .nav li a{color:#777777;}
+.navbar .nav li a:hover{color:#333333;text-decoration:none;}
+.nav-pills .active a{color:#ffffff;background-color:#0088cc;}
+.nav-pills a:hover{text-decoration:none;}
