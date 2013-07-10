@@ -49,7 +49,6 @@ Include the following scripts:
 <script src="js/bootstrap.js"></script>
 <script src="js/load-image.js"></script>
 <script src="js/bootstrap-image-gallery.js"></script>
-<script src="js/main.js"></script>
 ```
 
 ### Initialization
