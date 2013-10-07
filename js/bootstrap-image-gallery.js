@@ -57,7 +57,9 @@
         // Shows the next image after the given time in ms (0 = disabled):
         slideshow: 0,
         // Defines the image division for previous/next clicks:
-        imageClickDivision: 0.5
+        imageClickDivision: 0.5,
+	// Turns on/off binding mouse scroll through pictures:
+	mousewheel: true
     });
     var originalShow = $.fn.modal.Constructor.prototype.show,
         originalHide = $.fn.modal.Constructor.prototype.hide;
@@ -251,18 +253,20 @@
             }
         },
         wheelHandler: function (e) {
-            e.preventDefault();
-            e = e.originalEvent;
-            this._wheelCounter = this._wheelCounter || 0;
-            this._wheelCounter += (e.wheelDelta || e.detail || 0);
-            if ((e.wheelDelta && this._wheelCounter >= 120) ||
-                    (!e.wheelDelta && this._wheelCounter < 0)) {
-                this.prev();
-                this._wheelCounter = 0;
-            } else if ((e.wheelDelta && this._wheelCounter <= -120) ||
-                        (!e.wheelDelta && this._wheelCounter > 0)) {
-                this.next();
-                this._wheelCounter = 0;
+            if (this.options.mousewheel == true) {
+                e.preventDefault();
+                e = e.originalEvent;
+                this._wheelCounter = this._wheelCounter || 0;
+                this._wheelCounter += (e.wheelDelta || e.detail || 0);
+                if ((e.wheelDelta && this._wheelCounter >= 120) ||
+                        (!e.wheelDelta && this._wheelCounter < 0)) {
+                    this.prev();
+                    this._wheelCounter = 0;
+                } else if ((e.wheelDelta && this._wheelCounter <= -120) ||
+                            (!e.wheelDelta && this._wheelCounter > 0)) {
+                    this.next();
+                    this._wheelCounter = 0;
+                }
             }
         },
         initGalleryEvents: function () {
