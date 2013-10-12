@@ -1,10 +1,10 @@
 <!DOCTYPE HTML>
 <!--
 /*
- * Bootstrap Image Gallery 2.10.1
+ * Bootstrap Image Gallery Demo 3.0.0
  * https://github.com/blueimp/Bootstrap-Image-Gallery
  *
- * Copyright 2011, Sebastian Tschan
+ * Copyright 2013, Sebastian Tschan
  * https://blueimp.net
  *
  * Licensed under the MIT license:
@@ -18,82 +18,107 @@
 <![endif]-->
 <meta charset="utf-8">
 <title>Bootstrap Image Gallery</title>
-<meta name="description" content="Bootstrap Image Gallery is an extension to the Modal dialog of Twitter's Bootstrap toolkit, to ease navigation between a set of gallery images. It features mouse and keyboard navigation, transition effects, fullscreen mode and slideshow functionality.">
+<meta name="description" content="Bootstrap Image Gallery is an extension to blueimp Gallery, a touch-enabled, responsive and customizable image and video gallery. It displays images and videos in the modal dialog of the Bootstrap framework, features swipe, mouse and keyboard navigation, transition effects, fullscreen support and on-demand content loading and can be extended to display additional content types.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/bootstrap.css">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/bootstrap-responsive.css">
-<!--[if lt IE 7]><link rel="stylesheet" href="css/bootstrap-ie6.css"><![endif]-->
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
 <link rel="stylesheet" href="css/bootstrap-image-gallery.css">
+<link rel="stylesheet" href="css/demo.css">
 </head>
 <body>
-<div class="navbar navbar-fixed-top navbar-inverse">
-    <div class="navbar-inner">
-        <div class="container-fluid">
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+<div class="navbar navbar-default navbar-fixed-top navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-fixed-top .navbar-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
-            </a>
-            <a class="brand" href="https://github.com/blueimp/Bootstrap-Image-Gallery">Bootstrap Image Gallery</a>
-            <div class="nav-collapse">
-                <ul class="nav">
-                    <li><a href="https://github.com/blueimp/Bootstrap-Image-Gallery/tags">Download</a></li>
-                    <li><a href="https://github.com/blueimp/Bootstrap-Image-Gallery">Source Code</a></li>
-                    <li><a href="https://github.com/blueimp/Bootstrap-Image-Gallery/blob/master/README.md">Documentation</a></li>
-                    <li><a href="https://blueimp.net">&copy; Sebastian Tschan</a></li>
-                </ul>
+            </button>
+            <a class="navbar-brand" href="https://github.com/blueimp/Bootstrap-Image-Gallery">Bootstrap Image Gallery</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="https://github.com/blueimp/Bootstrap-Image-Gallery/tags">Download</a></li>
+                <li><a href="https://github.com/blueimp/Bootstrap-Image-Gallery">Source Code</a></li>
+                <li><a href="https://github.com/blueimp/Bootstrap-Image-Gallery/blob/master/README.md">Documentation</a></li>
+                <li><a href="https://blueimp.net">&copy; Sebastian Tschan</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <h1>Bootstrap Image Gallery Demo</h1>
+    <blockquote>
+        <p>Bootstrap Image Gallery is an extension to <a href="http://blueimp.github.io/Gallery/">blueimp Gallery</a>, a touch-enabled, responsive and customizable image &amp; video gallery.<br>It displays images and videos in the modal dialog of the <a href="http://getbootstrap.com/">Bootstrap</a> framework, features swipe, mouse and keyboard navigation, transition effects, fullscreen support and on-demand content loading and can be extended to display additional content types.</p>
+    </blockquote>
+    <form class="form-inline">
+        <div class="form-group">
+            <button id="video-gallery-button" type="button" class="btn btn-success btn-lg">
+                <i class="glyphicon glyphicon-film"></i>
+                Launch Video Gallery
+            </button>
+        </div>
+        <div class="form-group">
+            <button id="image-gallery-button" type="button" class="btn btn-primary btn-lg">
+                <i class="glyphicon glyphicon-picture"></i>
+                Launch Image Gallery
+            </button>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+          <label class="btn btn-success btn-lg">
+            <i class="glyphicon glyphicon-leaf"></i>
+            <input id="borderless-checkbox" type="checkbox"> Borderless
+          </label>
+          <label class="btn btn-primary btn-lg">
+            <i class="glyphicon glyphicon-fullscreen"></i>
+            <input id="fullscreen-checkbox" type="checkbox"> Fullscreen
+          </label>
+        </div>
+    </form>
+    <br>
+    <!-- The container for the list of example images -->
+    <div id="links"></div>
+    <br>
+</div>
+<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+<div id="blueimp-gallery" class="blueimp-gallery">
+    <!-- The container for the modal slides -->
+    <div class="slides"></div>
+    <!-- Controls for the borderless lightbox -->
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+    <!-- The modal dialog, which will be used to wrap the lightbox content -->
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body next"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left prev">
+                        <i class="glyphicon glyphicon-chevron-left"></i>
+                        Previous
+                    </button>
+                    <button type="button" class="btn btn-primary next">
+                        Next
+                        <i class="glyphicon glyphicon-chevron-right"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
 </div>
-<div class="container-fluid">
-    <header>
-        <p style="font-size: 16px;"><strong>Notice:</strong><br><a href="http://blueimp.github.io/Gallery/">blueimp Gallery</a> is a completely rewritten, much improved image gallery, replacing this version.</p>
-        <br>
-        <h1>Bootstrap Image Gallery Demo</h1>
-        <blockquote>
-            <p>Bootstrap Image Gallery is an extension to the <a href="http://twitter.github.com/bootstrap/javascript.html#modal">Modal</a> dialog of Twitter's <a href="http://twitter.github.com/bootstrap/">Bootstrap</a> toolkit, to ease navigation between a set of gallery images.<br>
-            It features mouse and keyboard navigation, transition effects, fullscreen mode and slideshow functionality.</p>
-        </blockquote>
-        <p>
-            <button id="start-slideshow" class="btn btn-large btn-success" data-slideshow="5000" data-target="#modal-gallery" data-selector="#gallery [data-gallery=gallery]">Start Slideshow</button>
-            <button id="toggle-fullscreen" class="btn btn-large btn-primary" data-toggle="button">Toggle Fullscreen</button>
-        </p>
-    </header>
-    <div id="gallery" data-toggle="modal-gallery" data-target="#modal-gallery"></div>
-    <br>
-</div>
-<!-- modal-gallery is the modal dialog used for the image gallery -->
-<div id="modal-gallery" class="modal modal-gallery hide fade" tabindex="-1">
-    <div class="modal-header">
-        <a class="close" data-dismiss="modal">&times;</a>
-        <h3 class="modal-title"></h3>
-    </div>
-    <div class="modal-body"><div class="modal-image"></div></div>
-    <div class="modal-footer">
-        <a class="btn modal-download" target="_blank">
-            <i class="icon-download"></i>
-            <span>Download</span>
-        </a>
-        <a class="btn btn-success modal-play modal-slideshow" data-slideshow="5000">
-            <i class="icon-play icon-white"></i>
-            <span>Slideshow</span>
-        </a>
-        <a class="btn btn-info modal-prev">
-            <i class="icon-arrow-left icon-white"></i>
-            <span>Previous</span>
-        </a>
-        <a class="btn btn-primary modal-next">
-            <span>Next</span>
-            <i class="icon-arrow-right icon-white"></i>
-        </a>
-    </div>
-</div>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-<script src="js/bootstrap.js"></script>
-<script src="js/load-image.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<!-- Bootstrap JS is not required, but included for the responsive demo navigation and button states -->
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
 <script src="js/bootstrap-image-gallery.js"></script>
-<script src="js/main.js"></script>
+<script src="js/demo.js"></script>
 </body> 
 </html>
