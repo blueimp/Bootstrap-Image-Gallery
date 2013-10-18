@@ -1,5 +1,5 @@
 /*
- * Bootstrap Image Gallery 3.0.0
+ * Bootstrap Image Gallery 3.0.1
  * https://github.com/blueimp/Bootstrap-Image-Gallery
  *
  * Copyright 2013, Sebastian Tschan
@@ -16,7 +16,7 @@
     if (typeof define === 'function' && define.amd) {
         define([
             'jquery',
-            './blueimp-gallery.js'
+            './blueimp-gallery'
         ], factory);
     } else {
         factory(
