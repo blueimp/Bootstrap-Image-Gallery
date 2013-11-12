@@ -1,56 +1,57 @@
 {
-    "name": "blueimp-bootstrap-image-gallery",
-    "version": "3.0.1",
-    "title": "Bootstrap Image Gallery",
-    "description": "Bootstrap Image Gallery is an extension to blueimp Gallery, a touch-enabled, responsive and customizable image and video gallery. It displays images and videos in the modal dialog of the Bootstrap framework, features swipe, mouse and keyboard navigation, transition effects, fullscreen support and on-demand content loading and can be extended to display additional content types.",
-    "keywords": [
-        "image",
-        "video",
-        "gallery",
-        "modal",
-        "dialog",
-        "lightbox",
-        "mobile",
-        "desktop",
-        "touch",
-        "responsive",
-        "swipe",
-        "mouse",
-        "keyboard",
-        "navigation",
-        "transition",
-        "effects",
-        "slideshow",
-        "fullscreen"
-    ],
-    "homepage": "https://github.com/blueimp/Bootstrap-Image-Gallery",
-    "author": {
-        "name": "Sebastian Tschan",
-        "url": "https://blueimp.net"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/blueimp/Bootstrap-Image-Gallery.git"
-    },
-    "bugs": "https://github.com/blueimp/Bootstrap-Image-Gallery/issues",
-    "licenses": [
-        {
-            "type": "MIT",
-            "url": "http://www.opensource.org/licenses/MIT"
-        }
-    ],
-    "devDependencies": {
-        "uglify-js": "2.4.0",
-        "less": "1.5.0-b4"
-    },
-    "dependencies": {
-        "jquery": ">=1.9.0",
-        "bootstrap": ">=3.0.0",
-        "blueimp-gallery": ">=2.11.0"
-    },
-    "main": [
-        "./css/bootstrap-image-gallery",
-        "./img/loading.gif",
-        "./js/bootstrap-image-gallery.js"
-    ]
+  "name": "blueimp-bootstrap-image-gallery",
+  "version": "3.1.0",
+  "title": "Bootstrap Image Gallery",
+  "description": "Bootstrap Image Gallery is an extension to blueimp Gallery, a touch-enabled, responsive and customizable image and video gallery. It displays images and videos in the modal dialog of the Bootstrap framework, features swipe, mouse and keyboard navigation, transition effects, fullscreen support and on-demand content loading and can be extended to display additional content types.",
+  "keywords": [
+    "image",
+    "video",
+    "gallery",
+    "modal",
+    "dialog",
+    "lightbox",
+    "mobile",
+    "desktop",
+    "touch",
+    "responsive",
+    "swipe",
+    "mouse",
+    "keyboard",
+    "navigation",
+    "transition",
+    "effects",
+    "slideshow",
+    "fullscreen"
+  ],
+  "homepage": "https://github.com/blueimp/Bootstrap-Image-Gallery",
+  "author": {
+    "name": "Sebastian Tschan",
+    "url": "https://blueimp.net"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/blueimp/Bootstrap-Image-Gallery.git"
+  },
+  "bugs": "https://github.com/blueimp/Bootstrap-Image-Gallery/issues",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    }
+  ],
+  "dependencies": {
+    "jquery": ">=1.9.0",
+    "bootstrap": ">=3.0.0",
+    "blueimp-gallery": ">=2.12.0"
+  },
+  "main": [
+    "css/bootstrap-image-gallery",
+    "img/loading.gif",
+    "js/bootstrap-image-gallery.js"
+  ],
+  "ignore": [
+    "/*.*",
+    "css/demo.css",
+    "js/demo.js"
+  ]
 }

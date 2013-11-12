@@ -94,7 +94,7 @@ For information regarding Keyboard shortcuts, Gallery Options, API methods, Vide
 ## Requirements
 * [jQuery](http://jquery.com/) v. 1.9.0+
 * [Bootstrap](http://getbootstrap.com/) v. 3.0.0+
-* [blueimp Gallery](https://github.com/blueimp/Gallery) v. 2.11.0+
+* [blueimp Gallery](https://github.com/blueimp/Gallery) v. 2.12.0+
 
 ## License
 Released under the [MIT license](http://www.opensource.org/licenses/MIT).
