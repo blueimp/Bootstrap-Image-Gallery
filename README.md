@@ -34,9 +34,9 @@ Add the following HTML snippet with the Gallery widget to the body of your webpa
     <div class="slides"></div>
     <!-- Controls for the borderless lightbox -->
     <h3 class="title"></h3>
-    <a class="prev">‹</a>
-    <a class="next">›</a>
-    <a class="close">×</a>
+    <a class="prev">&lsaquo;</a>
+    <a class="next">&rsaquo;</a>
+    <a class="close">&times;</a>
     <a class="play-pause"></a>
     <ol class="indicator"></ol>
     <!-- The modal dialog, which will be used to wrap the lightbox content -->
