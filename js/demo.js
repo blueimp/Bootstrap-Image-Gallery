@@ -1,5 +1,5 @@
 /*
- * Bootstrap Image Gallery JS Demo 3.0.0
+ * Bootstrap Image Gallery JS Demo 3.0.1
  * https://github.com/blueimp/Bootstrap-Image-Gallery
  *
  * Copyright 2013, Sebastian Tschan
@@ -10,16 +10,14 @@
  */
 
 /*jslint unparam: true */
-/*global window, document, blueimp, $ */
+/*global blueimp, $ */
 
 $(function () {
     'use strict';
 
     // Load demo images from flickr:
     $.ajax({
-        url: (window.location.protocol === 'https:' ?
-                'https://secure' : 'http://api') +
-                '.flickr.com/services/rest/',
+        url: 'https://api.flickr.com/services/rest/',
         data: {
             format: 'json',
             method: 'flickr.interestingness.getList',
