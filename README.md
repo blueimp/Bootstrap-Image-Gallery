@@ -4,6 +4,7 @@
 - [Description](#description)
 - [Setup](#setup)
 - [Documentation](#documentation)
+- [Extras](#extras)
 - [Requirements](#requirements)
 - [License](#license)
 
@@ -87,17 +88,18 @@ Create a list of links to image files with the attribute **data-gallery** (optio
     </a>
 </div>
 ```
-## Display Options
-To use the borderless layout as seen in the demo, change the div **blueimp-gallery** to this:
-
-```html
-<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" data-use-bootstrap-modal="false">
-...
-</div>
-```
 
 ## Documentation
 For information regarding Keyboard shortcuts, Gallery Options, API methods, Video Gallery setup, Gallery extensions and Browser support, please refer to the [blueimp Gallery documentation](https://github.com/blueimp/Gallery/blob/master/README.md).
+
+## Extras
+Bootstrap Image Gallery provides the additional `useBootstrapModal` option, which enables the original borderless layout as seen in the demo. The easiest way to enable this option is to adjust the lightbox container and set the `data-use-bootstrap-modal` attribute to `false`:
+
+```html
+<div id="blueimp-gallery" class="blueimp-gallery" data-use-bootstrap-modal="false">
+<!-- ... -->
+</div>
+```
 
 ## Requirements
 * [jQuery](http://jquery.com/) v. 1.9.0+
