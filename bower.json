@@ -45,7 +45,7 @@
     "blueimp-gallery": ">=2.12.0"
   },
   "main": [
-    "css/bootstrap-image-gallery",
+    "css/bootstrap-image-gallery.css",
     "img/loading.gif",
     "js/bootstrap-image-gallery.js"
   ],
