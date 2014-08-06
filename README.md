@@ -87,6 +87,14 @@ Create a list of links to image files with the attribute **data-gallery** (optio
     </a>
 </div>
 ```
+## Display Options
+To use the borderless layout as seen in the demo, change the div **blueimp-gallery** to this:
+
+```html
+<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" data-use-bootstrap-modal="false">
+...
+</div>
+```
 
 ## Documentation
 For information regarding Keyboard shortcuts, Gallery Options, API methods, Video Gallery setup, Gallery extensions and Browser support, please refer to the [blueimp Gallery documentation](https://github.com/blueimp/Gallery/blob/master/README.md).
