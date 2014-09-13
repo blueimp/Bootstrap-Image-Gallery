@@ -9,10 +9,10 @@
 - [License](#license)
 
 ## Demo
-[Bootstrap Image Gallery Demo](http://blueimp.github.io/Bootstrap-Image-Gallery/)
+[Bootstrap Image Gallery Demo](https://blueimp.github.io/Bootstrap-Image-Gallery/)
 
 ## Description
-Bootstrap Image Gallery is an extension to [blueimp Gallery](http://blueimp.github.io/Gallery/), a touch-enabled, responsive and customizable image &amp; video gallery.  
+Bootstrap Image Gallery is an extension to [blueimp Gallery](https://blueimp.github.io/Gallery/), a touch-enabled, responsive and customizable image &amp; video gallery.  
 It displays images and videos in the modal dialog of the [Bootstrap](http://getbootstrap.com/) framework, features swipe, mouse and keyboard navigation, transition effects, fullscreen support and on-demand content loading and can be extended to display additional content types.
 
 ## Setup
@@ -21,8 +21,8 @@ Copy the **css**, **img** and **js** directories to your website.
 Add the following HTML snippet to the head section of your webpage:
 
 ```html
-<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="http://blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
 <link rel="stylesheet" href="css/bootstrap-image-gallery.min.css">
 ```
 
@@ -68,8 +68,8 @@ Add the following HTML snippet with the Gallery widget to the body of your webpa
 Include the following scripts at the bottom of the body of your webpage:
 
 ```html
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
 <script src="js/bootstrap-image-gallery.min.js"></script>
 ```
 
@@ -102,7 +102,7 @@ Bootstrap Image Gallery provides the additional `useBootstrapModal` option, whic
 ```
 
 ## Requirements
-* [jQuery](http://jquery.com/) v. 1.9.0+
+* [jQuery](https://jquery.com/) v. 1.9.0+
 * [Bootstrap](http://getbootstrap.com/) v. 3.0.0+
 * [blueimp Gallery](https://github.com/blueimp/Gallery) v. 2.12.0+
 
