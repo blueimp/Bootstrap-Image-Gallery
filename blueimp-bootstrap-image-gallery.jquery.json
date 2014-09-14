@@ -46,5 +46,5 @@
     "blueimp-gallery": ">=2.12.0"
   },
   "docs": "https://github.com/blueimp/Bootstrap-Image-Gallery/blob/master/README.md",
-  "demo": "http://blueimp.github.io/Bootstrap-Image-Gallery/"
+  "demo": "https://blueimp.github.io/Bootstrap-Image-Gallery/"
 }
