@@ -96,7 +96,7 @@ For information regarding Keyboard shortcuts, Gallery Options, API methods, Vide
 Bootstrap Image Gallery provides the additional `useBootstrapModal` option, which enables the original borderless layout as seen in the demo. The easiest way to enable this option is to adjust the lightbox container and set the `data-use-bootstrap-modal` attribute to `false`:
 
 ```html
-<div id="blueimp-gallery" class="blueimp-gallery" data-use-bootstrap-modal="false">
+<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" data-use-bootstrap-modal="false">
 <!-- ... -->
 </div>
 ```
