@@ -32,13 +32,38 @@
     "type": "git",
     "url": "git://github.com/blueimp/Bootstrap-Image-Gallery.git"
   },
-  "bugs": "https://github.com/blueimp/Bootstrap-Image-Gallery/issues",
   "license": "MIT",
   "devDependencies": {
-    "grunt": "~0.4.5",
-    "grunt-contrib-less": "~0.11.3",
-    "grunt-contrib-uglify": "~0.5.0",
-    "grunt-contrib-jshint": "~0.10.0",
-    "grunt-bump-build-git": "~1.1.1"
+    "jshint": "2.8.0",
+    "less": "2.5.3",
+    "less-plugin-clean-css": "1.5.1",
+    "uglify-js": "2.6.1"
+  },
+  "scripts": {
+    "test": "jshint js",
+    "build:js": "cd js && uglifyjs bootstrap-image-gallery.js -c -m -o bootstrap-image-gallery.min.js --source-map bootstrap-image-gallery.min.js.map",
+    "build:less": "cd css && lessc --clean-css --source-map bootstrap-image-gallery.css bootstrap-image-gallery.min.css",
+    "build": "npm run build:js && npm run build:less",
+    "preversion": "npm test",
+    "version": "npm run build && git add -A js",
+    "postversion": "git push --tags origin master master:gh-pages && npm publish"
+  },
+  "jshintConfig": {
+    "bitwise": true,
+    "curly": true,
+    "eqeqeq": true,
+    "forin": true,
+    "freeze": true,
+    "immed": true,
+    "latedef": true,
+    "newcap": true,
+    "noarg": true,
+    "noempty": true,
+    "nonbsp": true,
+    "nonew": true,
+    "quotmark": true,
+    "undef": true,
+    "unused": true,
+    "strict": true
   }
 }

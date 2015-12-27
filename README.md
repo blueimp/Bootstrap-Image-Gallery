@@ -12,8 +12,13 @@
 [Bootstrap Image Gallery Demo](https://blueimp.github.io/Bootstrap-Image-Gallery/)
 
 ## Description
-Bootstrap Image Gallery is an extension to [blueimp Gallery](https://blueimp.github.io/Gallery/), a touch-enabled, responsive and customizable image &amp; video gallery.  
-It displays images and videos in the modal dialog of the [Bootstrap](http://getbootstrap.com/) framework, features swipe, mouse and keyboard navigation, transition effects, fullscreen support and on-demand content loading and can be extended to display additional content types.
+Bootstrap Image Gallery is an extension to
+[blueimp Gallery](https://blueimp.github.io/Gallery/), a touch-enabled,
+responsive and customizable image &amp; video gallery.  
+It displays images and videos in the modal dialog of the
+[Bootstrap](http://getbootstrap.com/) framework, features swipe, mouse and
+keyboard navigation, transition effects, fullscreen support and on-demand
+content loading and can be extended to display additional content types.
 
 ## Setup
 Copy the **css**, **img** and **js** directories to your website.
@@ -26,7 +31,8 @@ Add the following HTML snippet to the head section of your webpage:
 <link rel="stylesheet" href="css/bootstrap-image-gallery.min.css">
 ```
 
-Add the following HTML snippet with the Gallery widget to the body of your webpage:
+Add the following HTML snippet with the Gallery widget to the body of your
+webpage:
 
 ```html
 <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
@@ -73,7 +79,8 @@ Include the following scripts at the bottom of the body of your webpage:
 <script src="js/bootstrap-image-gallery.min.js"></script>
 ```
 
-Create a list of links to image files with the attribute **data-gallery** (optionally with enclosed thumbnails) and add them to the body of your webpage:
+Create a list of links to image files with the attribute **data-gallery**
+(optionally with enclosed thumbnails) and add them to the body of your webpage:
 
 ```html
 <div id="links">
@@ -90,10 +97,15 @@ Create a list of links to image files with the attribute **data-gallery** (optio
 ```
 
 ## Documentation
-For information regarding Keyboard shortcuts, Gallery Options, API methods, Video Gallery setup, Gallery extensions and Browser support, please refer to the [blueimp Gallery documentation](https://github.com/blueimp/Gallery/blob/master/README.md).
+For information regarding Keyboard shortcuts, Gallery Options, API methods,
+Video Gallery setup, Gallery extensions and Browser support, please refer to the
+[blueimp Gallery documentation](https://github.com/blueimp/Gallery/blob/master/README.md).
 
 ## Extras
-Bootstrap Image Gallery provides the additional `useBootstrapModal` option, which enables the original borderless layout as seen in the demo. The easiest way to enable this option is to adjust the lightbox container and set the `data-use-bootstrap-modal` attribute to `false`:
+Bootstrap Image Gallery provides the additional `useBootstrapModal` option,
+which enables the original borderless layout as seen in the demo. The easiest
+way to enable this option is to adjust the lightbox container and set the
+`data-use-bootstrap-modal` attribute to `false`:
 
 ```html
 <div id="blueimp-gallery" class="blueimp-gallery" data-use-bootstrap-modal="false">
