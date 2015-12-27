@@ -1,5 +1,5 @@
 /*
- * Bootstrap Image Gallery JS Demo 3.0.1
+ * Bootstrap Image Gallery JS Demo
  * https://github.com/blueimp/Bootstrap-Image-Gallery
  *
  * Copyright 2013, Sebastian Tschan
