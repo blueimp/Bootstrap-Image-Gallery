@@ -74,14 +74,3 @@
 .blueimp-gallery .modal-body .video-loading a:after {
 	content: none;
 }
-
-@media screen and (min-width: 768px) {
-  .blueimp-gallery .modal-dialog {
-    right: auto;
-    left: auto;
-	width: auto;
-    max-width: 900px;
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-}

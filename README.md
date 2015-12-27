@@ -21,7 +21,7 @@ Copy the **css**, **img** and **js** directories to your website.
 Add the following HTML snippet to the head section of your webpage:
 
 ```html
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <link rel="stylesheet" href="//blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
 <link rel="stylesheet" href="css/bootstrap-image-gallery.min.css">
 ```
@@ -68,7 +68,7 @@ Add the following HTML snippet with the Gallery widget to the body of your webpa
 Include the following scripts at the bottom of the body of your webpage:
 
 ```html
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
 <script src="js/bootstrap-image-gallery.min.js"></script>
 ```
@@ -102,9 +102,9 @@ Bootstrap Image Gallery provides the additional `useBootstrapModal` option, whic
 ```
 
 ## Requirements
-* [jQuery](https://jquery.com/) v. 1.9.0+
-* [Bootstrap](http://getbootstrap.com/) v. 3.0.0+
-* [blueimp Gallery](https://github.com/blueimp/Gallery) v. 2.12.0+
+* [jQuery](https://jquery.com/) v. 1.11.3+
+* [Bootstrap](http://getbootstrap.com/) v. 3.3.6+
+* [blueimp Gallery](https://github.com/blueimp/Gallery) v. 2.16.0+
 
 ## License
 Released under the [MIT license](http://www.opensource.org/licenses/MIT).
