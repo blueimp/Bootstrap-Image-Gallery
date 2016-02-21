@@ -37,33 +37,16 @@
     "jshint": "2.8.0",
     "less": "2.5.3",
     "less-plugin-clean-css": "1.5.1",
+    "standard": "6.0.7",
     "uglify-js": "2.6.1"
   },
   "scripts": {
-    "test": "jshint js",
+    "test": "standard",
     "build:js": "cd js && uglifyjs bootstrap-image-gallery.js -c -m -o bootstrap-image-gallery.min.js --source-map bootstrap-image-gallery.min.js.map",
     "build:less": "cd css && lessc --clean-css --source-map bootstrap-image-gallery.css bootstrap-image-gallery.min.css",
     "build": "npm run build:js && npm run build:less",
     "preversion": "npm test",
     "version": "npm run build && git add -A js",
     "postversion": "git push --tags origin master master:gh-pages && npm publish"
-  },
-  "jshintConfig": {
-    "bitwise": true,
-    "curly": true,
-    "eqeqeq": true,
-    "forin": true,
-    "freeze": true,
-    "immed": true,
-    "latedef": true,
-    "newcap": true,
-    "noarg": true,
-    "noempty": true,
-    "nonbsp": true,
-    "nonew": true,
-    "quotmark": true,
-    "undef": true,
-    "unused": true,
-    "strict": true
   }
 }
